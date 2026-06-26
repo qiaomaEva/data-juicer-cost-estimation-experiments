@@ -1,0 +1,27 @@
+project_name: image_pipeline_1781071560252_per100_chunk_0133
+dataset_path: /data/coco2017/indices/chunks_by_count/coco_physical_8G_per_100/chunk_0133.jsonl
+export_path: /data-juicer/pipeline_full/results_chunks/image/image_pipeline_1781071560252_per100_chunk_0133.jsonl
+np: 12
+use_cache: false
+open_tracer: true
+process:
+- image_size_filter:
+    min_size: 143kb
+    max_size: 249kb
+- image_deduplicator: null
+- image_aspect_ratio_filter:
+    min_ratio: 0.6852746005782115
+    max_ratio: 1.3838849985955852
+- image_shape_filter:
+    min_width: 526
+    max_width: 582
+    min_height: 421
+    max_height: 631
+- image_segment_mapper: null
+- image_detection_yolo_mapper: null
+- image_remove_background_mapper:
+    save_dir: "/tmp/data-juicer/output/image/remove_background/image_pipeline_1781071560252_per100_chunk_0133"
+- image_tagging_mapper:
+        pretrained_model_name_or_path: /data/coco2017/weights/ram_plus_swin_large_14m.pth
+        text_encoder_type: /data/coco2017/weights/bert-base-uncased
+        local_files_only: true
