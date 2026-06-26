@@ -1,0 +1,112 @@
+project_name: text_pipeline_1781071569701_chunk500_part0019
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/chunks/chunk-500/c4_10000_part0019.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results_chunks/text/text_pipeline_1781071569701_chunk500_part0019.jsonl
+np: 40
+use_cache: false
+open_tracer: true
+process:
+- fix_unicode_mapper:
+    normalization: NFKC
+- punctuation_normalization_mapper: null
+- whitespace_normalization_mapper: null
+- clean_links_mapper: null
+- sentence_split_mapper:
+    lang: en
+- remove_specific_chars_mapper: null
+- remove_words_with_incorrect_substrings_mapper:
+    lang: en
+    tokenization: true
+    substrings:
+    - <
+    - '>'
+    - '='
+    - '&'
+    - '?'
+- clean_ip_mapper: null
+- clean_copyright_mapper: null
+- remove_table_text_mapper: null
+- remove_repeat_sentences_mapper:
+    lowercase: true
+- remove_long_words_mapper:
+    min_len: 4
+    max_len: 19
+- text_length_filter:
+    min_len: 763
+    max_len: 3917
+- character_repetition_filter:
+    rep_len: 3
+    min_ratio: 0.0
+    max_ratio: 0.4
+    batch_size: 2
+- words_num_filter:
+    lang: en
+    tokenization: true
+    min_num: 134
+    max_num: 312
+    batch_size: 2
+- maximum_line_length_filter:
+    min_len: 362
+    max_len: 625
+    batch_size: 2
+- alphanumeric_filter:
+    tokenization: false
+    min_ratio: 0.1
+    max_ratio: 0.8
+    batch_size: 3
+    num_proc: 2
+- word_repetition_filter:
+    lang: en
+    tokenization: true
+    rep_len: 15
+    min_ratio: 0.1
+    max_ratio: 0.3
+    batch_size: 3
+- average_line_length_filter:
+    min_len: 99
+    max_len: 7169
+    batch_size: 2
+- text_entity_dependency_filter:
+    lang: en
+    any_or_all: any
+- stopwords_filter:
+    lang: en
+    tokenization: true
+    min_ratio: 0.4
+    use_words_aug: true
+- flagged_words_filter:
+    lang: en
+    tokenization: false
+    max_ratio: 0.045
+    use_words_aug: true
+- document_simhash_deduplicator:
+    tokenization: character
+    lowercase: false
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- fix_unicode_mapper
+- punctuation_normalization_mapper
+- whitespace_normalization_mapper
+- clean_links_mapper
+- sentence_split_mapper
+- remove_specific_chars_mapper
+- remove_words_with_incorrect_substrings_mapper
+- clean_ip_mapper
+- clean_copyright_mapper
+- remove_table_text_mapper
+- remove_repeat_sentences_mapper
+- remove_long_words_mapper
+- text_length_filter
+- character_repetition_filter
+- words_num_filter
+- maximum_line_length_filter
+- alphanumeric_filter
+- word_repetition_filter
+- average_line_length_filter
+- text_entity_dependency_filter
+- stopwords_filter
+- flagged_words_filter
+- document_simhash_deduplicator
