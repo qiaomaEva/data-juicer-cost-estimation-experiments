@@ -1,0 +1,26 @@
+project_name: audio_pipeline_1781071552218_chunk100_part0159
+dataset_path: /data/data-juicer_dataset/audio/indices/chunks/chunk-100/test-by-size-8192MiB_part0159.jsonl
+export_path: /home/yyw/pipeline_full/results_chunks/audio/audio_pipeline_1781071552218_chunk100_part0159.jsonl
+np: 12
+use_cache: false
+open_tracer: true
+process:
+- audio_size_filter:
+    min_size: 219kb
+    max_size: 555kb
+    any_or_all: any
+- audio_nmf_snr_filter:
+    min_snr: 1
+    snr_max: 13
+    any_or_all: all
+- audio_duration_filter:
+    min_duration: 9.874436580569657
+    max_duration: 10.151082649158527
+    any_or_all: all
+- audio_add_gaussian_noise_mapper:
+    save_dir: /tmp/data-juicer/output/audio/gaussian_noise/audio_pipeline_1781071552218_chunk100_part0159
+op_list_to_trace:
+- audio_size_filter
+- audio_nmf_snr_filter
+- audio_duration_filter
+- audio_add_gaussian_noise_mapper

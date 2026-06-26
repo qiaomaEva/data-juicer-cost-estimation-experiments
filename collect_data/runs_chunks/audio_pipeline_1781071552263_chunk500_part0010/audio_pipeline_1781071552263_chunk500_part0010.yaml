@@ -1,0 +1,24 @@
+project_name: audio_pipeline_1781071552263_chunk500_part0010
+dataset_path: /data/data-juicer_dataset/audio/indices/chunks/chunk-500/test-by-size-8192MiB_part0010.jsonl
+export_path: /home/yyw/pipeline_full/results_chunks/audio/audio_pipeline_1781071552263_chunk500_part0010.jsonl
+np: 4
+use_cache: false
+open_tracer: true
+process:
+- audio_nmf_snr_filter:
+    min_snr: -1
+    snr_max: 14
+    any_or_all: any
+- audio_duration_filter:
+    min_duration: 9.919883247423936
+    max_duration: 10.09289904197536
+    any_or_all: all
+- audio_ffmpeg_wrapped_mapper:
+    filter_name: aresample
+    filter_kwargs:
+      sample_rate: 48000
+    save_dir: /tmp/data-juicer/output/audio/ffmpeg_wrapped/audio_pipeline_1781071552263_chunk500_part0010
+op_list_to_trace:
+- audio_nmf_snr_filter
+- audio_duration_filter
+- audio_ffmpeg_wrapped_mapper
