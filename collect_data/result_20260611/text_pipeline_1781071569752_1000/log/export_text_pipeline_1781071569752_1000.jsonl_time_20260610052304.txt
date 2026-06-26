@@ -1,0 +1,994 @@
+2026-06-10 05:23:04.956 | INFO     | data_juicer.config.config:init_setup_from_cfg:685 - dataset_path config is empty; dataset is present
+2026-06-10 05:23:04.956 | WARNING  | data_juicer.config.config:init_setup_from_cfg:714 - Cache management of datasets is disabled.
+2026-06-10 05:23:04.956 | WARNING  | data_juicer.config.config:init_setup_from_cfg:726 - Set temp directory to store temp files to [None].
+2026-06-10 05:23:04.957 | DEBUG    | data_juicer.config.config:timing_context:43 - Initializing setup from config took 0.02 seconds
+2026-06-10 05:23:05.103 | DEBUG    | data_juicer.config.config:timing_context:43 - Updating operator process took 0.15 seconds
+2026-06-10 05:23:05.103 | INFO     | data_juicer.config.config:config_backup:998 - Back up the input config file [/home/yyw/pipeline_full/prepared_ai/configs/text_pipeline_1781071569752_1000.yaml] into the work_dir [/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000]
+2026-06-10 05:23:05.119 | INFO     | data_juicer.config.config:display_config:1019 - Configuration table: 
+╒══════════════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╕
+│ key                      │ values                                                                                                                │
+╞══════════════════════════╪═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╡
+│ config                   │ [Path_fr(/home/yyw/pipeline_full/prepared_ai/configs/text_pipeline_1781071569752_1000.yaml)]                          │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ auto                     │ False                                                                                                                 │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ auto_num                 │ 1000                                                                                                                  │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ hpo_config               │ None                                                                                                                  │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ data_probe_algo          │ 'uniform'                                                                                                             │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ data_probe_ratio         │ 1.0                                                                                                                   │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ project_name             │ 'text_pipeline_1781071569752_1000'                                                                                    │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ executor_type            │ 'default'                                                                                                             │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ dataset_path             │ ''                                                                                                                    │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ dataset                  │ {'configs': [{'format': 'jsonl',                                                                                      │
+│                          │               'path': '/data/data-juicer_dataset/RedPajama/indices/c4_1000.jsonl',                                    │
+│                          │               'type': 'local'}]}                                                                                      │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ generated_dataset_config │ None                                                                                                                  │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ validators               │ []                                                                                                                    │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ work_dir                 │ '/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000'                                                       │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_path              │ '/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000/text_pipeline_1781071569752_1000.jsonl'                │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_type              │ None                                                                                                                  │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_shard_size        │ 0                                                                                                                     │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_in_parallel       │ False                                                                                                                 │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_extra_args        │ {}                                                                                                                    │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_aws_credentials   │ None                                                                                                                  │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ keep_stats_in_res_ds     │ False                                                                                                                 │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ keep_hashes_in_res_ds    │ False                                                                                                                 │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ np                       │ 50                                                                                                                    │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ text_keys                │ 'text'                                                                                                                │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ image_key                │ 'images'                                                                                                              │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ image_bytes_key          │ 'image_bytes'                                                                                                         │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ image_special_token      │ '<__dj__image>'                                                                                                       │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ audio_key                │ 'audios'                                                                                                              │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ audio_special_token      │ '<__dj__audio>'                                                                                                       │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ video_key                │ 'videos'                                                                                                              │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ video_special_token      │ '<__dj__video>'                                                                                                       │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ eoc_special_token        │ '<|__dj__eoc|>'                                                                                                       │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ suffixes                 │ []                                                                                                                    │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ turbo                    │ False                                                                                                                 │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ skip_op_error            │ True                                                                                                                  │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_cache                │ False                                                                                                                 │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ds_cache_dir             │ '/data/data-juicer_models/datasets'                                                                                   │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ cache_compress           │ None                                                                                                                  │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_monitor             │ True                                                                                                                  │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_checkpoint           │ False                                                                                                                 │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ temp_dir                 │ None                                                                                                                  │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_tracer              │ True                                                                                                                  │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_list_to_trace         │ ['punctuation_normalization_mapper', 'fix_unicode_mapper', 'clean_ip_mapper',                                         │
+│                          │  'remove_specific_chars_mapper', 'clean_email_mapper', 'text_length_filter',                                          │
+│                          │  'text_action_filter', 'text_entity_dependency_filter', 'alphanumeric_filter',                                        │
+│                          │  'document_simhash_deduplicator']                                                                                     │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ trace_num                │ 10                                                                                                                    │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_insight_mining      │ False                                                                                                                 │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_list_to_mine          │ []                                                                                                                    │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_fusion                │ False                                                                                                                 │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ fusion_strategy          │ 'probe'                                                                                                               │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ adaptive_batch_size      │ False                                                                                                                 │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ process                  │ [{'punctuation_normalization_mapper': {'accelerator': None,                                                           │
+│                          │                                        'audio_key': 'audios',                                                         │
+│                          │                                        'cpu_required': None,                                                          │
+│                          │                                        'gpu_required': None,                                                          │
+│                          │                                        'history_key': 'history',                                                      │
+│                          │                                        'image_bytes_key': 'image_bytes',                                              │
+│                          │                                        'image_key': 'images',                                                         │
+│                          │                                        'index_key': None,                                                             │
+│                          │                                        'instruction_key': 'instruction',                                              │
+│                          │                                        'mem_required': None,                                                          │
+│                          │                                        'num_proc': 50,                                                                │
+│                          │                                        'prompt_key': 'prompt',                                                        │
+│                          │                                        'query_key': 'query',                                                          │
+│                          │                                        'response_key': 'response',                                                    │
+│                          │                                        'skip_op_error': True,                                                         │
+│                          │                                        'system_key': 'system',                                                        │
+│                          │                                        'text_key': 'text',                                                            │
+│                          │                                        'turbo': False,                                                                │
+│                          │                                        'video_key': 'videos',                                                         │
+│                          │                                        'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000'}}, │
+│                          │  {'fix_unicode_mapper': {'accelerator': None,                                                                         │
+│                          │                          'audio_key': 'audios',                                                                       │
+│                          │                          'cpu_required': None,                                                                        │
+│                          │                          'gpu_required': None,                                                                        │
+│                          │                          'history_key': 'history',                                                                    │
+│                          │                          'image_bytes_key': 'image_bytes',                                                            │
+│                          │                          'image_key': 'images',                                                                       │
+│                          │                          'index_key': None,                                                                           │
+│                          │                          'instruction_key': 'instruction',                                                            │
+│                          │                          'mem_required': None,                                                                        │
+│                          │                          'normalization': 'NFKD',                                                                     │
+│                          │                          'num_proc': 50,                                                                              │
+│                          │                          'prompt_key': 'prompt',                                                                      │
+│                          │                          'query_key': 'query',                                                                        │
+│                          │                          'response_key': 'response',                                                                  │
+│                          │                          'skip_op_error': True,                                                                       │
+│                          │                          'system_key': 'system',                                                                      │
+│                          │                          'text_key': 'text',                                                                          │
+│                          │                          'turbo': False,                                                                              │
+│                          │                          'video_key': 'videos',                                                                       │
+│                          │                          'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000'}},               │
+│                          │  {'clean_ip_mapper': {'accelerator': None,                                                                            │
+│                          │                       'audio_key': 'audios',                                                                          │
+│                          │                       'cpu_required': None,                                                                           │
+│                          │                       'gpu_required': None,                                                                           │
+│                          │                       'history_key': 'history',                                                                       │
+│                          │                       'image_bytes_key': 'image_bytes',                                                               │
+│                          │                       'image_key': 'images',                                                                          │
+│                          │                       'index_key': None,                                                                              │
+│                          │                       'instruction_key': 'instruction',                                                               │
+│                          │                       'mem_required': None,                                                                           │
+│                          │                       'num_proc': 50,                                                                                 │
+│                          │                       'pattern': None,                                                                                │
+│                          │                       'prompt_key': 'prompt',                                                                         │
+│                          │                       'query_key': 'query',                                                                           │
+│                          │                       'repl': '',                                                                                     │
+│                          │                       'response_key': 'response',                                                                     │
+│                          │                       'skip_op_error': True,                                                                          │
+│                          │                       'system_key': 'system',                                                                         │
+│                          │                       'text_key': 'text',                                                                             │
+│                          │                       'turbo': False,                                                                                 │
+│                          │                       'video_key': 'videos',                                                                          │
+│                          │                       'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000'}},                  │
+│                          │  {'remove_specific_chars_mapper': {'accelerator': None,                                                               │
+│                          │                                    'audio_key': 'audios',                                                             │
+│                          │                                    'chars_to_remove': '◆●■►▼▲▴∆▻▷❖♡□',                                                │
+│                          │                                    'cpu_required': None,                                                              │
+│                          │                                    'gpu_required': None,                                                              │
+│                          │                                    'history_key': 'history',                                                          │
+│                          │                                    'image_bytes_key': 'image_bytes',                                                  │
+│                          │                                    'image_key': 'images',                                                             │
+│                          │                                    'index_key': None,                                                                 │
+│                          │                                    'instruction_key': 'instruction',                                                  │
+│                          │                                    'mem_required': None,                                                              │
+│                          │                                    'num_proc': 50,                                                                    │
+│                          │                                    'prompt_key': 'prompt',                                                            │
+│                          │                                    'query_key': 'query',                                                              │
+│                          │                                    'response_key': 'response',                                                        │
+│                          │                                    'skip_op_error': True,                                                             │
+│                          │                                    'system_key': 'system',                                                            │
+│                          │                                    'text_key': 'text',                                                                │
+│                          │                                    'turbo': False,                                                                    │
+│                          │                                    'video_key': 'videos',                                                             │
+│                          │                                    'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000'}},     │
+│                          │  {'clean_email_mapper': {'accelerator': None,                                                                         │
+│                          │                          'audio_key': 'audios',                                                                       │
+│                          │                          'cpu_required': None,                                                                        │
+│                          │                          'gpu_required': None,                                                                        │
+│                          │                          'history_key': 'history',                                                                    │
+│                          │                          'image_bytes_key': 'image_bytes',                                                            │
+│                          │                          'image_key': 'images',                                                                       │
+│                          │                          'index_key': None,                                                                           │
+│                          │                          'instruction_key': 'instruction',                                                            │
+│                          │                          'mem_required': None,                                                                        │
+│                          │                          'num_proc': 50,                                                                              │
+│                          │                          'pattern': None,                                                                             │
+│                          │                          'prompt_key': 'prompt',                                                                      │
+│                          │                          'query_key': 'query',                                                                        │
+│                          │                          'repl': '',                                                                                  │
+│                          │                          'response_key': 'response',                                                                  │
+│                          │                          'skip_op_error': True,                                                                       │
+│                          │                          'system_key': 'system',                                                                      │
+│                          │                          'text_key': 'text',                                                                          │
+│                          │                          'turbo': False,                                                                              │
+│                          │                          'video_key': 'videos',                                                                       │
+│                          │                          'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000'}},               │
+│                          │  {'text_length_filter': {'accelerator': None,                                                                         │
+│                          │                          'audio_key': 'audios',                                                                       │
+│                          │                          'cpu_required': None,                                                                        │
+│                          │                          'gpu_required': None,                                                                        │
+│                          │                          'history_key': 'history',                                                                    │
+│                          │                          'image_bytes_key': 'image_bytes',                                                            │
+│                          │                          'image_key': 'images',                                                                       │
+│                          │                          'index_key': None,                                                                           │
+│                          │                          'instruction_key': 'instruction',                                                            │
+│                          │                          'max_closed_interval': True,                                                                 │
+│                          │                          'max_len': 4199,                                                                             │
+│                          │                          'mem_required': None,                                                                        │
+│                          │                          'min_closed_interval': True,                                                                 │
+│                          │                          'min_len': 666,                                                                              │
+│                          │                          'num_proc': 50,                                                                              │
+│                          │                          'prompt_key': 'prompt',                                                                      │
+│                          │                          'query_key': 'query',                                                                        │
+│                          │                          'response_key': 'response',                                                                  │
+│                          │                          'reversed_range': False,                                                                     │
+│                          │                          'skip_op_error': True,                                                                       │
+│                          │                          'stats_export_path': None,                                                                   │
+│                          │                          'system_key': 'system',                                                                      │
+│                          │                          'text_key': 'text',                                                                          │
+│                          │                          'turbo': False,                                                                              │
+│                          │                          'video_key': 'videos',                                                                       │
+│                          │                          'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000'}},               │
+│                          │  {'text_action_filter': {'accelerator': None,                                                                         │
+│                          │                          'audio_key': 'audios',                                                                       │
+│                          │                          'cpu_required': None,                                                                        │
+│                          │                          'gpu_required': None,                                                                        │
+│                          │                          'history_key': 'history',                                                                    │
+│                          │                          'image_bytes_key': 'image_bytes',                                                            │
+│                          │                          'image_key': 'images',                                                                       │
+│                          │                          'index_key': None,                                                                           │
+│                          │                          'instruction_key': 'instruction',                                                            │
+│                          │                          'lang': 'en',                                                                                │
+│                          │                          'max_closed_interval': True,                                                                 │
+│                          │                          'mem_required': None,                                                                        │
+│                          │                          'min_action_num': 1,                                                                         │
+│                          │                          'min_closed_interval': True,                                                                 │
+│                          │                          'num_proc': 50,                                                                              │
+│                          │                          'prompt_key': 'prompt',                                                                      │
+│                          │                          'query_key': 'query',                                                                        │
+│                          │                          'response_key': 'response',                                                                  │
+│                          │                          'reversed_range': False,                                                                     │
+│                          │                          'skip_op_error': True,                                                                       │
+│                          │                          'stats_export_path': None,                                                                   │
+│                          │                          'system_key': 'system',                                                                      │
+│                          │                          'text_key': 'text',                                                                          │
+│                          │                          'turbo': False,                                                                              │
+│                          │                          'video_key': 'videos',                                                                       │
+│                          │                          'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000'}},               │
+│                          │  {'text_entity_dependency_filter': {'accelerator': None,                                                              │
+│                          │                                     'any_or_all': 'all',                                                              │
+│                          │                                     'audio_key': 'audios',                                                            │
+│                          │                                     'cpu_required': None,                                                             │
+│                          │                                     'gpu_required': None,                                                             │
+│                          │                                     'history_key': 'history',                                                         │
+│                          │                                     'image_bytes_key': 'image_bytes',                                                 │
+│                          │                                     'image_key': 'images',                                                            │
+│                          │                                     'index_key': None,                                                                │
+│                          │                                     'instruction_key': 'instruction',                                                 │
+│                          │                                     'lang': 'en',                                                                     │
+│                          │                                     'max_closed_interval': True,                                                      │
+│                          │                                     'mem_required': None,                                                             │
+│                          │                                     'min_closed_interval': True,                                                      │
+│                          │                                     'min_dependency_num': 1,                                                          │
+│                          │                                     'num_proc': 50,                                                                   │
+│                          │                                     'prompt_key': 'prompt',                                                           │
+│                          │                                     'query_key': 'query',                                                             │
+│                          │                                     'response_key': 'response',                                                       │
+│                          │                                     'reversed_range': False,                                                          │
+│                          │                                     'skip_op_error': True,                                                            │
+│                          │                                     'stats_export_path': None,                                                        │
+│                          │                                     'system_key': 'system',                                                           │
+│                          │                                     'text_key': 'text',                                                               │
+│                          │                                     'turbo': False,                                                                   │
+│                          │                                     'video_key': 'videos',                                                            │
+│                          │                                     'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000'}},    │
+│                          │  {'alphanumeric_filter': {'accelerator': None,                                                                        │
+│                          │                           'audio_key': 'audios',                                                                      │
+│                          │                           'batch_size': 3,                                                                            │
+│                          │                           'cpu_required': None,                                                                       │
+│                          │                           'gpu_required': None,                                                                       │
+│                          │                           'history_key': 'history',                                                                   │
+│                          │                           'image_bytes_key': 'image_bytes',                                                           │
+│                          │                           'image_key': 'images',                                                                      │
+│                          │                           'index_key': None,                                                                          │
+│                          │                           'instruction_key': 'instruction',                                                           │
+│                          │                           'max_closed_interval': True,                                                                │
+│                          │                           'max_ratio': 0.9,                                                                           │
+│                          │                           'mem_required': None,                                                                       │
+│                          │                           'min_closed_interval': True,                                                                │
+│                          │                           'min_ratio': 0.1,                                                                           │
+│                          │                           'num_proc': 4,                                                                              │
+│                          │                           'prompt_key': 'prompt',                                                                     │
+│                          │                           'query_key': 'query',                                                                       │
+│                          │                           'response_key': 'response',                                                                 │
+│                          │                           'reversed_range': False,                                                                    │
+│                          │                           'skip_op_error': True,                                                                      │
+│                          │                           'stats_export_path': None,                                                                  │
+│                          │                           'system_key': 'system',                                                                     │
+│                          │                           'text_key': 'text',                                                                         │
+│                          │                           'tokenization': False,                                                                      │
+│                          │                           'turbo': False,                                                                             │
+│                          │                           'video_key': 'videos',                                                                      │
+│                          │                           'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000'}},              │
+│                          │  {'document_simhash_deduplicator': {'accelerator': None,                                                              │
+│                          │                                     'audio_key': 'audios',                                                            │
+│                          │                                     'cpu_required': None,                                                             │
+│                          │                                     'gpu_required': None,                                                             │
+│                          │                                     'hamming_distance': 4,                                                            │
+│                          │                                     'history_key': 'history',                                                         │
+│                          │                                     'ignore_pattern': '\\p{P}',                                                       │
+│                          │                                     'image_bytes_key': 'image_bytes',                                                 │
+│                          │                                     'image_key': 'images',                                                            │
+│                          │                                     'index_key': None,                                                                │
+│                          │                                     'instruction_key': 'instruction',                                                 │
+│                          │                                     'lowercase': False,                                                               │
+│                          │                                     'mem_required': None,                                                             │
+│                          │                                     'num_blocks': 6,                                                                  │
+│                          │                                     'num_proc': 50,                                                                   │
+│                          │                                     'prompt_key': 'prompt',                                                           │
+│                          │                                     'query_key': 'query',                                                             │
+│                          │                                     'response_key': 'response',                                                       │
+│                          │                                     'skip_op_error': True,                                                            │
+│                          │                                     'system_key': 'system',                                                           │
+│                          │                                     'text_key': 'text',                                                               │
+│                          │                                     'tokenization': 'character',                                                      │
+│                          │                                     'turbo': False,                                                                   │
+│                          │                                     'video_key': 'videos',                                                            │
+│                          │                                     'window_size': 6,                                                                 │
+│                          │                                     'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000'}}]    │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ percentiles              │ []                                                                                                                    │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_original_dataset  │ False                                                                                                                 │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ save_stats_in_one_file   │ False                                                                                                                 │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ray_address              │ 'auto'                                                                                                                │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ custom_operator_paths    │ None                                                                                                                  │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ debug                    │ False                                                                                                                 │
+╘══════════════════════════╧═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╛
+2026-06-10 05:23:05.122 | DEBUG    | data_juicer.config.config:timing_context:43 - Total config initialization time took 0.53 seconds
+2026-06-10 05:23:05.122 | INFO     | data_juicer.tools.process_data:timing_context:15 - Loading configuration took 0.53 seconds
+2026-06-10 05:23:05.261 | INFO     | data_juicer.core.executor.default_executor:__init__:58 - Setting up dataset builder...
+2026-06-10 05:23:05.262 | INFO     | data_juicer.core.data.dataset_builder:__init__:51 - found dataset setting: {'configs': [{'type': 'local', 'path': '/data/data-juicer_dataset/RedPajama/indices/c4_1000.jsonl', 'format': 'jsonl'}]}
+2026-06-10 05:23:05.262 | INFO     | data_juicer.core.data.load_strategy:get_strategy_class:84 - Getting strategy class for exec: default, data_type: local, data_source: None
+2026-06-10 05:23:05.263 | INFO     | data_juicer.core.executor.default_executor:__init__:74 - Preparing exporter...
+2026-06-10 05:23:05.263 | INFO     | data_juicer.core.executor.default_executor:__init__:113 - Preparing tracer...
+2026-06-10 05:23:05.264 | INFO     | data_juicer.tools.process_data:timing_context:15 - Initializing executor took 0.14 seconds
+2026-06-10 05:23:05.264 | INFO     | data_juicer.core.executor.default_executor:run:139 - Loading dataset from dataset builder...
+2026-06-10 05:23:05.288 | INFO     | data_juicer.format.formatter:unify_format:174 - Unifying the input dataset formats...
+2026-06-10 05:23:05.289 | INFO     | data_juicer.format.formatter:unify_format:191 - There are 1000 sample(s) in the original dataset.
+Filter (num_proc=50):   0%|          | 0/1000 [00:00<?, ? examples/s]Filter (num_proc=50):   2%|2         | 20/1000 [00:01<00:50, 19.42 examples/s]Filter (num_proc=50):  30%|###       | 300/1000 [00:01<00:01, 356.52 examples/s]Filter (num_proc=50):  74%|#######4  | 740/1000 [00:01<00:00, 953.03 examples/s]Filter (num_proc=50): 100%|##########| 1000/1000 [00:01<00:00, 708.09 examples/s]
+2026-06-10 05:23:06.787 | INFO     | data_juicer.format.formatter:unify_format:203 - 1000 samples left after filtering empty text.
+2026-06-10 05:23:06.789 | INFO     | data_juicer.core.executor.default_executor:run:145 - Preparing process operators...
+2026-06-10 05:23:06.790 | INFO     | data_juicer.utils.lazy_loader:check_packages:214 - Package [spacy-pkuseg] not found, installing...
+2026-06-10 05:23:06.790 | DEBUG    | data_juicer.utils.lazy_loader:_install_package:276 - Installing package: spacy-pkuseg
+2026-06-10 05:23:06.791 | DEBUG    | data_juicer.utils.lazy_loader:_install_package:279 - Package installation triggered from:
+  File "/home/yyw/data-juicer/data-juicer/data_juicer/ops/filter/text_action_filter.py", line 32, in __init__
+    LazyLoader.check_packages(["spacy-pkuseg"], "--no-deps")
+  File "/home/yyw/data-juicer/data-juicer/data_juicer/utils/lazy_loader.py", line 216, in check_packages
+    cls._install_package(package_spec, pip_args)
+  File "/home/yyw/data-juicer/data-juicer/data_juicer/utils/lazy_loader.py", line 278, in _install_package
+    stack = traceback.extract_stack()[-3:]
+
+2026-06-10 05:23:06.906 | INFO     | data_juicer.utils.lazy_loader:_install_package:381 - Using version from dependencies: spacy-pkuseg==0.0.33
+2026-06-10 05:23:06.906 | INFO     | data_juicer.utils.lazy_loader:_install_package:390 - Installing spacy-pkuseg==0.0.33 using uv...
+2026-06-10 05:23:06.956 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:08.297 | INFO     | data_juicer.utils.lazy_loader:check_packages:214 - Package [spacy-pkuseg] not found, installing...
+2026-06-10 05:23:08.298 | DEBUG    | data_juicer.utils.lazy_loader:_install_package:276 - Installing package: spacy-pkuseg
+2026-06-10 05:23:08.298 | DEBUG    | data_juicer.utils.lazy_loader:_install_package:279 - Package installation triggered from:
+  File "/home/yyw/data-juicer/data-juicer/data_juicer/ops/filter/text_entity_dependency_filter.py", line 41, in __init__
+    LazyLoader.check_packages(["spacy-pkuseg"], "--no-deps")
+  File "/home/yyw/data-juicer/data-juicer/data_juicer/utils/lazy_loader.py", line 216, in check_packages
+    cls._install_package(package_spec, pip_args)
+  File "/home/yyw/data-juicer/data-juicer/data_juicer/utils/lazy_loader.py", line 278, in _install_package
+    stack = traceback.extract_stack()[-3:]
+
+2026-06-10 05:23:08.299 | INFO     | data_juicer.utils.lazy_loader:_install_package:381 - Using version from dependencies: spacy-pkuseg==0.0.33
+2026-06-10 05:23:08.299 | INFO     | data_juicer.utils.lazy_loader:_install_package:390 - Installing spacy-pkuseg==0.0.33 using uv...
+2026-06-10 05:23:08.350 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+2026-06-10 05:23:09.568 | INFO     | data_juicer.core.executor.default_executor:run:172 - Processing data...
+2026-06-10 05:23:09.568 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 05:23:09.635 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[punctuation_normalization_mapper] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:09.637 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [punctuation_normalization_mapper] running with number of procs:50
+punctuation_normalization_mapper_process (num_proc=50):   0%|          | 0/1000 [00:00<?, ? examples/s]punctuation_normalization_mapper_process (num_proc=50):   2%|2         | 20/1000 [00:01<01:18, 12.56 examples/s]punctuation_normalization_mapper_process (num_proc=50):  18%|#8        | 180/1000 [00:01<00:05, 142.98 examples/s]punctuation_normalization_mapper_process (num_proc=50):  36%|###6      | 360/1000 [00:01<00:02, 311.26 examples/s]punctuation_normalization_mapper_process (num_proc=50):  52%|#####2    | 520/1000 [00:01<00:01, 473.62 examples/s]punctuation_normalization_mapper_process (num_proc=50): 100%|##########| 1000/1000 [00:02<00:00, 461.96 examples/s]
+2026-06-10 05:23:11.922 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading torch...
+2026-06-10 05:23:12.438 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [1/10] OP [punctuation_normalization_mapper] Done in 2.869s. Left 1000 samples.
+2026-06-10 05:23:12.438 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 05:23:12.500 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[fix_unicode_mapper] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:12.502 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [fix_unicode_mapper] running with number of procs:50
+fix_unicode_mapper_process (num_proc=50):   0%|          | 0/1000 [00:00<?, ? examples/s]2026-06-10 05:23:14.158 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.161 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.172 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.176 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.181 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.188 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.192 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+fix_unicode_mapper_process (num_proc=50):   2%|2         | 20/1000 [00:01<01:19, 12.32 examples/s]2026-06-10 05:23:14.205 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.207 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.213 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.219 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.229 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.236 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.243 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.248 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.261 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.263 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.271 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.279 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.284 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.299 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+fix_unicode_mapper_process (num_proc=50):  16%|#6        | 160/1000 [00:01<00:06, 124.56 examples/s]2026-06-10 05:23:14.306 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.309 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.321 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.324 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.334 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.341 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.351 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.359 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.362 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.370 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.381 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.387 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.394 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.400 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.406 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+fix_unicode_mapper_process (num_proc=50):  36%|###6      | 360/1000 [00:01<00:02, 314.82 examples/s]2026-06-10 05:23:14.416 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.423 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.431 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.439 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.449 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.454 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.461 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.470 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.477 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.483 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.503 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.502 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+fix_unicode_mapper_process (num_proc=50):  62%|######2   | 620/1000 [00:01<00:00, 605.78 examples/s]2026-06-10 05:23:14.516 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 05:23:14.518 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+fix_unicode_mapper_process (num_proc=50): 100%|##########| 1000/1000 [00:02<00:00, 461.43 examples/s]
+2026-06-10 05:23:15.236 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [2/10] OP [fix_unicode_mapper] Done in 2.797s. Left 1000 samples.
+2026-06-10 05:23:15.236 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 05:23:15.307 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[clean_ip_mapper] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:15.309 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [clean_ip_mapper] running with number of procs:50
+clean_ip_mapper_process (num_proc=50):   0%|          | 0/1000 [00:00<?, ? examples/s]clean_ip_mapper_process (num_proc=50):   2%|2         | 20/1000 [00:01<00:53, 18.37 examples/s]clean_ip_mapper_process (num_proc=50):  20%|##        | 200/1000 [00:01<00:03, 221.47 examples/s]clean_ip_mapper_process (num_proc=50):  40%|####      | 400/1000 [00:01<00:01, 468.69 examples/s]clean_ip_mapper_process (num_proc=50):  58%|#####8    | 580/1000 [00:01<00:00, 688.43 examples/s]clean_ip_mapper_process (num_proc=50): 100%|##########| 1000/1000 [00:01<00:00, 616.03 examples/s]
+2026-06-10 05:23:17.644 | WARNING  | data_juicer.core.tracer:trace_mapper:84 - There are 2 different samples before and after op [clean_ip_mapper] -- less than expected 10 samples.
+2026-06-10 05:23:18.103 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [3/10] OP [clean_ip_mapper] Done in 2.866s. Left 1000 samples.
+2026-06-10 05:23:18.104 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 05:23:18.158 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[remove_specific_chars_mapper] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:18.160 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [remove_specific_chars_mapper] running with number of procs:50
+remove_specific_chars_mapper_process (num_proc=50):   0%|          | 0/1000 [00:00<?, ? examples/s]remove_specific_chars_mapper_process (num_proc=50):   2%|2         | 20/1000 [00:01<00:52, 18.63 examples/s]remove_specific_chars_mapper_process (num_proc=50):  20%|##        | 200/1000 [00:01<00:03, 226.38 examples/s]remove_specific_chars_mapper_process (num_proc=50):  40%|####      | 400/1000 [00:01<00:01, 465.83 examples/s]remove_specific_chars_mapper_process (num_proc=50):  58%|#####8    | 580/1000 [00:01<00:00, 684.05 examples/s]remove_specific_chars_mapper_process (num_proc=50): 100%|##########| 1000/1000 [00:01<00:00, 618.42 examples/s]
+2026-06-10 05:23:20.297 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [4/10] OP [remove_specific_chars_mapper] Done in 2.193s. Left 1000 samples.
+2026-06-10 05:23:20.298 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 05:23:20.349 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[clean_email_mapper] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:20.350 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [clean_email_mapper] running with number of procs:50
+clean_email_mapper_process (num_proc=50):   0%|          | 0/1000 [00:00<?, ? examples/s]clean_email_mapper_process (num_proc=50):   2%|2         | 20/1000 [00:01<00:53, 18.22 examples/s]clean_email_mapper_process (num_proc=50):  20%|##        | 200/1000 [00:01<00:03, 223.42 examples/s]clean_email_mapper_process (num_proc=50):  34%|###4      | 340/1000 [00:01<00:01, 384.04 examples/s]clean_email_mapper_process (num_proc=50):  52%|#####2    | 520/1000 [00:01<00:00, 601.53 examples/s]clean_email_mapper_process (num_proc=50): 100%|##########| 1000/1000 [00:01<00:00, 605.96 examples/s]
+2026-06-10 05:23:22.482 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [5/10] OP [clean_email_mapper] Done in 2.183s. Left 1000 samples.
+2026-06-10 05:23:22.483 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 05:23:22.538 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[text_length_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:22.539 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [text_length_filter] running with number of procs:50
+Adding new column for stats (num_proc=50):   0%|          | 0/1000 [00:00<?, ? examples/s]Adding new column for stats (num_proc=50):   2%|2         | 20/1000 [00:01<00:57, 17.19 examples/s]Adding new column for stats (num_proc=50):  88%|########8 | 880/1000 [00:01<00:00, 951.69 examples/s]Adding new column for stats (num_proc=50): 100%|##########| 1000/1000 [00:01<00:00, 703.45 examples/s]
+2026-06-10 05:23:24.062 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[text_length_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:24.062 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [text_length_filter] running with number of procs:50
+text_length_filter_compute_stats (num_proc=50):   0%|          | 0/1000 [00:00<?, ? examples/s]text_length_filter_compute_stats (num_proc=50):   2%|2         | 20/1000 [00:01<00:54, 18.08 examples/s]text_length_filter_compute_stats (num_proc=50):  18%|#8        | 180/1000 [00:01<00:04, 197.09 examples/s]text_length_filter_compute_stats (num_proc=50):  36%|###6      | 360/1000 [00:01<00:01, 414.40 examples/s]text_length_filter_compute_stats (num_proc=50):  52%|#####2    | 520/1000 [00:01<00:00, 606.57 examples/s]text_length_filter_compute_stats (num_proc=50): 100%|##########| 1000/1000 [00:01<00:00, 602.88 examples/s]
+2026-06-10 05:23:25.829 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[text_length_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:25.829 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [text_length_filter] running with number of procs:50
+text_length_filter_process (num_proc=50):   0%|          | 0/1000 [00:00<?, ? examples/s]text_length_filter_process (num_proc=50):   2%|2         | 20/1000 [00:01<00:54, 17.94 examples/s]text_length_filter_process (num_proc=50):  16%|#6        | 160/1000 [00:01<00:04, 172.14 examples/s]text_length_filter_process (num_proc=50):  34%|###4      | 340/1000 [00:01<00:01, 391.57 examples/s]text_length_filter_process (num_proc=50):  52%|#####2    | 520/1000 [00:01<00:00, 614.44 examples/s]text_length_filter_process (num_proc=50):  88%|########8 | 880/1000 [00:01<00:00, 1170.41 examples/s]text_length_filter_process (num_proc=50): 100%|##########| 1000/1000 [00:01<00:00, 587.88 examples/s]
+2026-06-10 05:23:28.062 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [6/10] OP [text_length_filter] Done in 5.578s. Left 583 samples.
+2026-06-10 05:23:28.062 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 05:23:28.122 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[text_action_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:28.124 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [text_action_filter] running with number of procs:50
+text_action_filter_compute_stats (num_proc=50):   0%|          | 0/583 [00:00<?, ? examples/s]2026-06-10 05:23:29.409 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-460)
+2026-06-10 05:23:29.409 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.423 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-461)
+2026-06-10 05:23:29.424 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.430 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-462)
+2026-06-10 05:23:29.431 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.436 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-463)
+2026-06-10 05:23:29.437 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.448 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-464)
+2026-06-10 05:23:29.449 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.456 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-465)
+2026-06-10 05:23:29.457 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.468 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-466)
+2026-06-10 05:23:29.469 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.480 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-467)
+2026-06-10 05:23:29.481 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.491 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-468)
+2026-06-10 05:23:29.492 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.508 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-469)
+2026-06-10 05:23:29.509 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.523 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-470)
+2026-06-10 05:23:29.524 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.536 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-471)
+2026-06-10 05:23:29.538 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+2026-06-10 05:23:29.540 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-472)
+2026-06-10 05:23:29.540 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.552 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-473)
+2026-06-10 05:23:29.553 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.561 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-474)
+2026-06-10 05:23:29.562 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.571 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-475)
+2026-06-10 05:23:29.572 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.579 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-476)
+2026-06-10 05:23:29.580 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.593 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-477)
+2026-06-10 05:23:29.594 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.604 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-478)
+2026-06-10 05:23:29.605 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.621 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-479)
+2026-06-10 05:23:29.622 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.632 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-480)
+2026-06-10 05:23:29.633 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.647 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-481)
+2026-06-10 05:23:29.648 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.660 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-482)
+2026-06-10 05:23:29.661 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+2026-06-10 05:23:29.662 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-483)
+2026-06-10 05:23:29.663 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.671 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-484)
+2026-06-10 05:23:29.672 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.689 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-485)
+2026-06-10 05:23:29.691 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.698 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-486)
+2026-06-10 05:23:29.699 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.710 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-487)
+2026-06-10 05:23:29.711 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.719 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-488)
+2026-06-10 05:23:29.721 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.729 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-489)
+2026-06-10 05:23:29.731 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.738 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-490)
+2026-06-10 05:23:29.739 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.750 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-491)
+2026-06-10 05:23:29.751 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.756 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-492)
+2026-06-10 05:23:29.757 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.771 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-493)
+2026-06-10 05:23:29.772 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.782 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-494)
+2026-06-10 05:23:29.783 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.788 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-495)
+2026-06-10 05:23:29.789 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.798 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-496)
+2026-06-10 05:23:29.799 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.811 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-497)
+2026-06-10 05:23:29.813 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.823 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-498)
+2026-06-10 05:23:29.824 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.834 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-499)
+2026-06-10 05:23:29.835 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.849 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-500)
+2026-06-10 05:23:29.850 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.870 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-501)
+2026-06-10 05:23:29.871 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.882 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-502)
+2026-06-10 05:23:29.883 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.901 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-503)
+2026-06-10 05:23:29.902 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.920 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-504)
+2026-06-10 05:23:29.921 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.941 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-505)
+2026-06-10 05:23:29.943 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.956 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-506)
+2026-06-10 05:23:29.957 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.974 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-507)
+2026-06-10 05:23:29.975 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:29.993 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-508)
+2026-06-10 05:23:29.994 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:30.008 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-509)
+2026-06-10 05:23:30.009 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+text_action_filter_compute_stats (num_proc=50):   0%|          | 1/583 [00:03<29:07,  3.00s/ examples]text_action_filter_compute_stats (num_proc=50):   1%|          | 3/583 [00:03<07:56,  1.22 examples/s]text_action_filter_compute_stats (num_proc=50):   1%|1         | 8/583 [00:03<02:21,  4.05 examples/s]text_action_filter_compute_stats (num_proc=50):   3%|2         | 17/583 [00:03<00:53, 10.61 examples/s]text_action_filter_compute_stats (num_proc=50):   5%|4         | 29/583 [00:03<00:26, 21.08 examples/s]text_action_filter_compute_stats (num_proc=50):   8%|8         | 49/583 [00:03<00:12, 42.63 examples/s]text_action_filter_compute_stats (num_proc=50):  12%|#1        | 68/583 [00:03<00:08, 64.06 examples/s]text_action_filter_compute_stats (num_proc=50):  16%|#5        | 92/583 [00:03<00:05, 93.64 examples/s]text_action_filter_compute_stats (num_proc=50):  21%|##1       | 124/583 [00:03<00:03, 135.64 examples/s]text_action_filter_compute_stats (num_proc=50):  28%|##8       | 164/583 [00:04<00:02, 190.39 examples/s]text_action_filter_compute_stats (num_proc=50):  36%|###5      | 209/583 [00:04<00:01, 250.66 examples/s]text_action_filter_compute_stats (num_proc=50):  44%|####3     | 254/583 [00:04<00:01, 299.90 examples/s]text_action_filter_compute_stats (num_proc=50):  51%|#####     | 295/583 [00:04<00:00, 328.09 examples/s]text_action_filter_compute_stats (num_proc=50):  57%|#####7    | 333/583 [00:04<00:00, 340.39 examples/s]text_action_filter_compute_stats (num_proc=50):  65%|######4   | 377/583 [00:04<00:00, 367.89 examples/s]text_action_filter_compute_stats (num_proc=50):  72%|#######1  | 417/583 [00:04<00:00, 369.70 examples/s]text_action_filter_compute_stats (num_proc=50):  78%|#######8  | 457/583 [00:04<00:00, 371.25 examples/s]text_action_filter_compute_stats (num_proc=50):  85%|########5 | 496/583 [00:04<00:00, 355.98 examples/s]text_action_filter_compute_stats (num_proc=50):  91%|#########1| 533/583 [00:05<00:00, 318.75 examples/s]text_action_filter_compute_stats (num_proc=50):  97%|#########7| 567/583 [00:05<00:00, 289.10 examples/s]text_action_filter_compute_stats (num_proc=50): 100%|##########| 583/583 [00:05<00:00, 100.58 examples/s]
+2026-06-10 05:23:34.115 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[text_action_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:34.116 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [text_action_filter] running with number of procs:50
+text_action_filter_process (num_proc=50):   0%|          | 0/583 [00:00<?, ? examples/s]text_action_filter_process (num_proc=50):   2%|2         | 12/583 [00:00<00:46, 12.26 examples/s]text_action_filter_process (num_proc=50):  16%|#6        | 96/583 [00:01<00:04, 115.36 examples/s]text_action_filter_process (num_proc=50):  31%|###       | 180/583 [00:01<00:01, 222.64 examples/s]text_action_filter_process (num_proc=50):  43%|####3     | 252/583 [00:01<00:01, 308.01 examples/s]text_action_filter_process (num_proc=50):  79%|#######9  | 462/583 [00:01<00:00, 664.70 examples/s]text_action_filter_process (num_proc=50): 100%|##########| 583/583 [00:01<00:00, 366.11 examples/s]
+2026-06-10 05:23:35.845 | WARNING  | data_juicer.core.tracer:trace_filter:180 - There are 1 filtered samples before and after op [text_action_filter] -- less than expected 10 samples.
+2026-06-10 05:23:36.189 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [7/10] OP [text_action_filter] Done in 8.127s. Left 582 samples.
+2026-06-10 05:23:36.190 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 05:23:36.246 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[text_entity_dependency_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:36.248 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [text_entity_dependency_filter] running with number of procs:50
+text_entity_dependency_filter_compute_stats (num_proc=50):   0%|          | 0/582 [00:00<?, ? examples/s]2026-06-10 05:23:37.564 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-562)
+2026-06-10 05:23:37.564 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.572 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-563)
+2026-06-10 05:23:37.573 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.581 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-564)
+2026-06-10 05:23:37.582 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.589 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-565)
+2026-06-10 05:23:37.589 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.607 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-566)
+2026-06-10 05:23:37.608 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.614 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-567)
+2026-06-10 05:23:37.615 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.621 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-568)
+2026-06-10 05:23:37.622 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.629 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-569)
+2026-06-10 05:23:37.630 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.640 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-570)
+2026-06-10 05:23:37.641 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.651 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-571)
+2026-06-10 05:23:37.652 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.658 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-572)
+2026-06-10 05:23:37.659 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.672 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-573)
+2026-06-10 05:23:37.673 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.683 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-574)
+2026-06-10 05:23:37.684 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+2026-06-10 05:23:37.685 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-575)
+2026-06-10 05:23:37.686 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.704 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-576)
+2026-06-10 05:23:37.705 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.722 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-577)
+2026-06-10 05:23:37.723 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.734 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-578)
+2026-06-10 05:23:37.735 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.744 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-579)
+2026-06-10 05:23:37.746 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.765 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-580)
+2026-06-10 05:23:37.766 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.783 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-581)
+2026-06-10 05:23:37.784 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.800 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-582)
+2026-06-10 05:23:37.801 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.824 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-583)
+2026-06-10 05:23:37.825 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.831 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-584)
+2026-06-10 05:23:37.832 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.846 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-586)
+2026-06-10 05:23:37.847 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.850 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-585)
+2026-06-10 05:23:37.851 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.872 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-587)
+2026-06-10 05:23:37.874 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.891 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-588)
+2026-06-10 05:23:37.892 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.911 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-589)
+2026-06-10 05:23:37.912 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.929 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-590)
+2026-06-10 05:23:37.930 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.943 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-591)
+2026-06-10 05:23:37.944 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.967 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-592)
+2026-06-10 05:23:37.968 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:37.984 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-593)
+2026-06-10 05:23:37.985 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.000 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-594)
+2026-06-10 05:23:38.001 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.022 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-595)
+2026-06-10 05:23:38.023 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.036 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-596)
+2026-06-10 05:23:38.037 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.060 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-597)
+2026-06-10 05:23:38.061 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+2026-06-10 05:23:38.064 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-598)
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.065 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.090 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-599)
+2026-06-10 05:23:38.091 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.112 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-600)
+2026-06-10 05:23:38.113 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.129 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-601)
+2026-06-10 05:23:38.130 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.147 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-602)
+2026-06-10 05:23:38.149 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.163 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-603)
+2026-06-10 05:23:38.164 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.185 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-604)
+2026-06-10 05:23:38.186 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.208 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-605)
+2026-06-10 05:23:38.209 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.220 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-606)
+2026-06-10 05:23:38.221 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.243 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-607)
+2026-06-10 05:23:38.244 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.261 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-608)
+2026-06-10 05:23:38.262 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.283 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-609)
+2026-06-10 05:23:38.285 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.301 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-610)
+2026-06-10 05:23:38.302 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+2026-06-10 05:23:38.321 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_spacy_model at 0x7ff59347d760>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-611)
+2026-06-10 05:23:38.322 | INFO     | data_juicer.utils.model_utils:prepare_spacy_model:740 - Loading spacy model [en_core_web_md-3.7.0]...
+/home/ray/anaconda3/lib/python3.11/site-packages/spacy/util.py:922: UserWarning: [W095] Model 'en_core_web_md' (3.7.0) was trained with spaCy v3.7.0 and may not be 100% compatible with the current version (3.8.7). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+text_entity_dependency_filter_compute_stats (num_proc=50):   0%|          | 1/582 [00:02<28:00,  2.89s/ examples]text_entity_dependency_filter_compute_stats (num_proc=50):   1%|          | 3/582 [00:03<07:41,  1.25 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):   1%|1         | 6/582 [00:03<03:10,  3.02 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):   2%|2         | 14/582 [00:03<01:01,  9.23 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):   4%|3         | 22/582 [00:03<00:34, 16.38 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):   6%|6         | 37/582 [00:03<00:16, 33.28 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):   8%|8         | 48/582 [00:03<00:11, 44.99 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  11%|#1        | 66/582 [00:03<00:07, 69.17 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  16%|#5        | 91/582 [00:03<00:04, 105.97 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  20%|#9        | 114/582 [00:03<00:03, 132.42 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  25%|##5       | 147/582 [00:03<00:02, 179.44 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  32%|###2      | 188/582 [00:04<00:01, 238.16 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  39%|###9      | 227/582 [00:04<00:01, 277.78 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  47%|####6     | 272/582 [00:04<00:00, 323.92 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  54%|#####3    | 312/582 [00:04<00:00, 343.38 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  60%|#####9    | 349/582 [00:04<00:00, 349.29 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  66%|######6   | 386/582 [00:04<00:00, 350.24 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  74%|#######3  | 429/582 [00:04<00:00, 366.24 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  80%|########  | 468/582 [00:04<00:00, 356.77 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  87%|########6 | 505/582 [00:04<00:00, 329.14 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  93%|#########2| 539/582 [00:05<00:00, 300.03 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50):  98%|#########7| 570/582 [00:05<00:00, 243.45 examples/s]text_entity_dependency_filter_compute_stats (num_proc=50): 100%|##########| 582/582 [00:05<00:00, 99.06 examples/s] 
+2026-06-10 05:23:42.388 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[text_entity_dependency_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:42.389 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [text_entity_dependency_filter] running with number of procs:50
+text_entity_dependency_filter_process (num_proc=50):   0%|          | 0/582 [00:00<?, ? examples/s]text_entity_dependency_filter_process (num_proc=50):   2%|2         | 12/582 [00:00<00:44, 12.72 examples/s]text_entity_dependency_filter_process (num_proc=50):  14%|#4        | 84/582 [00:01<00:04, 105.04 examples/s]text_entity_dependency_filter_process (num_proc=50):  25%|##4       | 144/582 [00:01<00:02, 182.46 examples/s]text_entity_dependency_filter_process (num_proc=50):  41%|####1     | 240/582 [00:01<00:01, 317.79 examples/s]text_entity_dependency_filter_process (num_proc=50):  54%|#####3    | 312/582 [00:01<00:00, 396.67 examples/s]text_entity_dependency_filter_process (num_proc=50): 100%|##########| 582/582 [00:01<00:00, 368.78 examples/s]
+2026-06-10 05:23:44.341 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [8/10] OP [text_entity_dependency_filter] Done in 8.151s. Left 530 samples.
+2026-06-10 05:23:44.342 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 05:23:44.399 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[alphanumeric_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:44.401 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [alphanumeric_filter] running with number of procs:4
+alphanumeric_filter_compute_stats (num_proc=4):   0%|          | 0/530 [00:00<?, ? examples/s]alphanumeric_filter_compute_stats (num_proc=4):  16%|#6        | 87/530 [00:00<00:01, 404.48 examples/s]alphanumeric_filter_compute_stats (num_proc=4): 100%|##########| 530/530 [00:00<00:00, 1380.99 examples/s]
+2026-06-10 05:23:44.835 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[alphanumeric_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:44.835 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [alphanumeric_filter] running with number of procs:4
+alphanumeric_filter_process (num_proc=4):   0%|          | 0/530 [00:00<?, ? examples/s]alphanumeric_filter_process (num_proc=4):  25%|##5       | 133/530 [00:00<00:00, 873.67 examples/s]alphanumeric_filter_process (num_proc=4): 100%|##########| 530/530 [00:00<00:00, 1886.50 examples/s]
+2026-06-10 05:23:45.143 | WARNING  | data_juicer.core.tracer:trace_filter:143 - Datasets before and after op [alphanumeric_filter] are all the same. Thus no comparison results would be generated.
+2026-06-10 05:23:45.780 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [9/10] OP [alphanumeric_filter] Done in 1.437s. Left 530 samples.
+2026-06-10 05:23:45.781 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 05:23:45.838 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[document_simhash_deduplicator] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 05:23:45.840 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [document_simhash_deduplicator] running with number of procs:50
+document_simhash_deduplicator_compute_hash (num_proc=50):   0%|          | 0/530 [00:00<?, ? examples/s]2026-06-10 05:23:46.885 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:46.894 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:46.902 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:46.911 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:46.916 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:46.925 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+document_simhash_deduplicator_compute_hash (num_proc=50):   2%|2         | 11/530 [00:00<00:46, 11.25 examples/s]2026-06-10 05:23:46.937 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:46.943 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:46.952 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:46.969 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:46.979 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:46.996 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.008 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.015 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.025 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.037 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+document_simhash_deduplicator_compute_hash (num_proc=50):  10%|#         | 55/530 [00:01<00:07, 65.73 examples/s]2026-06-10 05:23:47.044 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.048 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.061 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.071 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.080 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.088 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.099 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.108 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.117 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.125 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.133 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.143 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.151 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+document_simhash_deduplicator_compute_hash (num_proc=50):  20%|##        | 107/530 [00:01<00:03, 131.95 examples/s]2026-06-10 05:23:47.160 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.170 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.180 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.191 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.197 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.209 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.219 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.228 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.236 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.244 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.255 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.264 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+document_simhash_deduplicator_compute_hash (num_proc=50):  29%|##9       | 154/530 [00:01<00:02, 187.94 examples/s]2026-06-10 05:23:47.270 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.286 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.295 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.304 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.315 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.323 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.332 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.344 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.350 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+document_simhash_deduplicator_compute_hash (num_proc=50):  64%|######4   | 340/530 [00:01<00:00, 517.76 examples/s]document_simhash_deduplicator_compute_hash (num_proc=50): 100%|##########| 530/530 [00:01<00:00, 325.39 examples/s]
+2026-06-10 05:23:47.632 | INFO     | data_juicer.ops.deduplicator.document_simhash_deduplicator:process:151 - Start querying 530 samples.
+2026-06-10 05:23:47.632 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 05:23:47.645 | INFO     | data_juicer.ops.deduplicator.document_simhash_deduplicator:process:157 - Querying done, found 0 matches.
+2026-06-10 05:23:47.666 | INFO     | data_juicer.ops.deduplicator.document_simhash_deduplicator:process:204 - Found 0 clusters and 0 hashes.
+Filter:   0%|          | 0/530 [00:00<?, ? examples/s]Filter: 100%|##########| 530/530 [00:00<00:00, 1983.44 examples/s]Filter: 100%|##########| 530/530 [00:00<00:00, 1957.99 examples/s]
+2026-06-10 05:23:47.948 | INFO     | data_juicer.ops.deduplicator.document_simhash_deduplicator:process:236 - Keep 530 samples after SimHash dedup.
+2026-06-10 05:23:47.948 | WARNING  | data_juicer.core.tracer:trace_deduplicator:217 - Datasets before and after op [document_simhash_deduplicator] are all the same. Thus no comparison results would be generated.
+2026-06-10 05:23:48.029 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [10/10] OP [document_simhash_deduplicator] Done in 2.248s. Left 530 samples.
+2026-06-10 05:23:56.456 | INFO     | data_juicer.utils.logger_utils:make_log_summarization:258 - Processing finished with:
+Warnings: 6
+Errors: 0
+
+Error/Warning details can be found in the log file [/home/yyw/pipeline_full/runs/text_pipeline_1781071569752_1000/log/export_text_pipeline_1781071569752_1000.jsonl_time_20260610052304.txt] and its related log files.
+2026-06-10 05:23:56.459 | INFO     | data_juicer.core.executor.default_executor:run:184 - All OPs are done in 46.891s.
+2026-06-10 05:23:56.460 | INFO     | data_juicer.core.executor.default_executor:run:188 - Exporting dataset to disk...
+2026-06-10 05:23:56.460 | INFO     | data_juicer.core.exporter:_export_impl:154 - Exporting computed stats into a single file...
+Creating json from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|##########| 1/1 [00:00<00:00, 47.68ba/s]
+2026-06-10 05:23:56.528 | INFO     | data_juicer.core.exporter:_export_impl:190 - Export dataset into a single file...
+Creating json from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|##########| 1/1 [00:00<00:00, 26.81ba/s]
+2026-06-10 05:23:56.572 | INFO     | data_juicer.tools.process_data:timing_context:15 - Running executor took 51.31 seconds

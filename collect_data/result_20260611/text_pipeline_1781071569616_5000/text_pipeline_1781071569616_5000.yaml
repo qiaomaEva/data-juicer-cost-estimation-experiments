@@ -1,0 +1,67 @@
+project_name: text_pipeline_1781071569616_5000
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/c4_5000.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results/text/text_pipeline_1781071569616_5000.jsonl
+np: 40
+use_cache: false
+open_tracer: true
+process:
+- fix_unicode_mapper:
+    normalization: NFKD
+- punctuation_normalization_mapper: null
+- clean_links_mapper: null
+- clean_email_mapper: null
+- replace_content_mapper:
+    pattern: ●■
+    repl: ''
+- flagged_words_filter:
+    lang: en
+    tokenization: false
+    max_ratio: 0.05
+    use_words_aug: false
+- text_action_filter:
+    lang: en
+- average_line_length_filter:
+    min_len: 66
+    max_len: 6888
+    batch_size: 2
+- word_repetition_filter:
+    lang: en
+    tokenization: false
+    rep_len: 10
+    min_ratio: 0.1
+    max_ratio: 0.3
+    batch_size: 2
+- perplexity_filter:
+    lang: en
+    max_ppl: 2432
+    batch_size: 2
+- token_num_filter:
+    hf_tokenizer: EleutherAI/pythia-14m
+    min_num: 168
+    max_num: 1253
+- maximum_line_length_filter:
+    min_len: 256
+    max_len: 698
+    batch_size: 3
+- document_simhash_deduplicator:
+    tokenization: space
+    lowercase: true
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- fix_unicode_mapper
+- punctuation_normalization_mapper
+- clean_links_mapper
+- clean_email_mapper
+- replace_content_mapper
+- flagged_words_filter
+- text_action_filter
+- average_line_length_filter
+- word_repetition_filter
+- perplexity_filter
+- token_num_filter
+- maximum_line_length_filter
+- document_simhash_deduplicator

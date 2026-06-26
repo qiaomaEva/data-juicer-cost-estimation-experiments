@@ -1,0 +1,58 @@
+project_name: text_pipeline_1781071569543_2000
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/c4_2000.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results/text/text_pipeline_1781071569543_2000.jsonl
+np: 40
+use_cache: false
+open_tracer: true
+process:
+- punctuation_normalization_mapper: null
+- whitespace_normalization_mapper: null
+- clean_ip_mapper: null
+- remove_repeat_sentences_mapper:
+    lowercase: true
+- remove_long_words_mapper:
+    min_len: 4
+    max_len: 10
+- remove_table_text_mapper: null
+- remove_specific_chars_mapper: null
+- replace_content_mapper:
+    pattern: \d+(?:,\d+)*
+    repl: ''
+- clean_links_mapper: null
+- clean_email_mapper: null
+- stopwords_filter:
+    lang: en
+    tokenization: false
+    min_ratio: 0.3
+    use_words_aug: true
+- flagged_words_filter:
+    lang: en
+    tokenization: true
+    max_ratio: 0.045
+    use_words_aug: true
+- text_entity_dependency_filter:
+    lang: en
+    any_or_all: all
+- document_simhash_deduplicator:
+    tokenization: space
+    lowercase: false
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- punctuation_normalization_mapper
+- whitespace_normalization_mapper
+- clean_ip_mapper
+- remove_repeat_sentences_mapper
+- remove_long_words_mapper
+- remove_table_text_mapper
+- remove_specific_chars_mapper
+- replace_content_mapper
+- clean_links_mapper
+- clean_email_mapper
+- stopwords_filter
+- flagged_words_filter
+- text_entity_dependency_filter
+- document_simhash_deduplicator

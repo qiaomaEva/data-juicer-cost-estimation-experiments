@@ -1,0 +1,33 @@
+project_name: image_pipeline_1781071560294_128MB
+dataset_path: /data/coco2017/indices/coco_physical_128M.jsonl
+export_path: /data-juicer/pipeline_full/results/image/image_pipeline_1781071560294_128MB.jsonl
+np: 8
+use_cache: false
+open_tracer: true
+process:
+- image_deduplicator: null
+- image_size_filter:
+    min_size: 84kb
+    max_size: 208kb
+- image_aspect_ratio_filter:
+    min_ratio: 0.8142072363371736
+    max_ratio: 1.3950493223955591
+- image_shape_filter:
+    min_width: 403
+    max_width: 632
+    min_height: 340
+    max_height: 604
+- image_face_ratio_filter:
+    min_ratio: 0.16227096581857198
+    max_ratio: 0.5500218586881391
+- image_aesthetics_filter:
+    hf_scorer_model: shunk031/aesthetics-predictor-v2-sac-logos-ava1-l14-linearMSE
+    min_score: 0.4700085348166915
+    max_score: 1.0
+- image_watermark_filter:
+    hf_watermark_model: /data/coco2017/weights/watermark_model
+- image_detection_yolo_mapper: null
+- image_remove_background_mapper:
+    save_dir: "/tmp/data-juicer/output/image/remove_background/image_pipeline_1781071560294_128MB"
+- image_blur_mapper:
+    save_dir: "/tmp/data-juicer/output/image/blur/image_pipeline_1781071560294_128MB"

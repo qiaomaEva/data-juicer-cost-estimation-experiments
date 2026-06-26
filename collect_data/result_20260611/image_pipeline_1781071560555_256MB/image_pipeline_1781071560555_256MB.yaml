@@ -1,0 +1,21 @@
+project_name: image_pipeline_1781071560555_256MB
+dataset_path: /data/coco2017/indices/coco_physical_256M.jsonl
+export_path: /data-juicer/pipeline_full/results/image/image_pipeline_1781071560555_256MB.jsonl
+np: 4
+use_cache: false
+open_tracer: true
+process:
+- image_size_filter:
+    min_size: 98kb
+    max_size: 214kb
+- image_deduplicator: null
+- image_shape_filter:
+    min_width: 441
+    max_width: 577
+    min_height: 412
+    max_height: 624
+- image_face_count_filter: null
+- image_nsfw_filter:
+    hf_nsfw_model: /data/coco2017/weights/nsfw_model
+- image_remove_background_mapper:
+    save_dir: "/tmp/data-juicer/output/image/remove_background/image_pipeline_1781071560555_256MB"

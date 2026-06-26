@@ -1,0 +1,20 @@
+project_name: image_pipeline_1781071560211_4G
+dataset_path: /data/coco2017/indices/coco_physical_4G.jsonl
+export_path: /data-juicer/pipeline_full/results/image/image_pipeline_1781071560211_4G.jsonl
+np: 8
+use_cache: false
+open_tracer: true
+process:
+- image_size_filter:
+    min_size: 73kb
+    max_size: 151kb
+- image_deduplicator: null
+- image_aspect_ratio_filter:
+    min_ratio: 0.8424210008606041
+    max_ratio: 1.5397556781216741
+- image_face_ratio_filter:
+    min_ratio: 0.192409851601938
+    max_ratio: 0.9913648653991284
+- image_detection_yolo_mapper: null
+- image_face_blur_mapper:
+    save_dir: "/tmp/data-juicer/output/image/face_blur/image_pipeline_1781071560211_4G"

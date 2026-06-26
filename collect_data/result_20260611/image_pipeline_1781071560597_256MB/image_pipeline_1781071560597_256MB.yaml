@@ -1,0 +1,32 @@
+project_name: image_pipeline_1781071560597_256MB
+dataset_path: /data/coco2017/indices/coco_physical_256M.jsonl
+export_path: /data-juicer/pipeline_full/results/image/image_pipeline_1781071560597_256MB.jsonl
+np: 16
+use_cache: false
+open_tracer: true
+process:
+- image_deduplicator: null
+- image_aspect_ratio_filter:
+    min_ratio: 0.7897079417666817
+    max_ratio: 1.3762727922476952
+- image_shape_filter:
+    min_width: 496
+    max_width: 560
+    min_height: 368
+    max_height: 487
+- image_watermark_filter:
+    hf_watermark_model: /data/coco2017/weights/watermark_model
+- image_nsfw_filter:
+    hf_nsfw_model: /data/coco2017/weights/nsfw_model
+- image_face_ratio_filter:
+    min_ratio: 0.23850246184515875
+    max_ratio: 0.8027906725688316
+- image_blur_mapper:
+    save_dir: "/tmp/data-juicer/output/image/blur/image_pipeline_1781071560597_256MB"
+- image_remove_background_mapper:
+    save_dir: "/tmp/data-juicer/output/image/remove_background/image_pipeline_1781071560597_256MB"
+- image_detection_yolo_mapper: null
+- image_tagging_mapper:
+        pretrained_model_name_or_path: /data/coco2017/weights/ram_plus_swin_large_14m.pth
+        text_encoder_type: /data/coco2017/weights/bert-base-uncased
+        local_files_only: true

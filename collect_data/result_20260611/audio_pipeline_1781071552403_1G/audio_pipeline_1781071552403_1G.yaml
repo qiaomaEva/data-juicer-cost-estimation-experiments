@@ -1,0 +1,26 @@
+project_name: audio_pipeline_1781071552403_1G
+dataset_path: /data/data-juicer_dataset/audio/indices/test-by-size-1024MiB.jsonl
+export_path: /home/yyw/pipeline_full/results/audio/audio_pipeline_1781071552403_1G.jsonl
+np: 8
+use_cache: false
+open_tracer: true
+process:
+- audio_duration_filter:
+    min_duration: 9.402634519375695
+    max_duration: 10.043539868853378
+    any_or_all: any
+- audio_nmf_snr_filter:
+    min_snr: 2
+    snr_max: 10
+    any_or_all: all
+- audio_size_filter:
+    min_size: 299kb
+    max_size: 600kb
+    any_or_all: any
+- audio_add_gaussian_noise_mapper:
+    save_dir: /tmp/data-juicer/output/audio/gaussian_noise/audio_pipeline_1781071552403_1G
+op_list_to_trace:
+- audio_duration_filter
+- audio_nmf_snr_filter
+- audio_size_filter
+- audio_add_gaussian_noise_mapper

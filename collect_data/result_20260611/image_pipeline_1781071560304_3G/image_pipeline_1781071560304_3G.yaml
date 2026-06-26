@@ -1,0 +1,15 @@
+project_name: image_pipeline_1781071560304_3G
+dataset_path: /data/coco2017/indices/coco_physical_3G.jsonl
+export_path: /data-juicer/pipeline_full/results/image/image_pipeline_1781071560304_3G.jsonl
+np: 8
+use_cache: false
+open_tracer: true
+process:
+- image_size_filter:
+    min_size: 111kb
+    max_size: 234kb
+- image_deduplicator: null
+- image_aspect_ratio_filter:
+    min_ratio: 0.8231950263877205
+    max_ratio: 1.6025070577418934
+- image_detection_yolo_mapper: null

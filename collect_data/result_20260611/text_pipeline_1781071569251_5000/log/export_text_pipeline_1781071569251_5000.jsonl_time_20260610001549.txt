@@ -1,0 +1,841 @@
+2026-06-10 00:15:49.819 | INFO     | data_juicer.config.config:init_setup_from_cfg:685 - dataset_path config is empty; dataset is present
+2026-06-10 00:15:49.820 | WARNING  | data_juicer.config.config:init_setup_from_cfg:714 - Cache management of datasets is disabled.
+2026-06-10 00:15:49.820 | WARNING  | data_juicer.config.config:init_setup_from_cfg:726 - Set temp directory to store temp files to [None].
+2026-06-10 00:15:49.820 | DEBUG    | data_juicer.config.config:timing_context:43 - Initializing setup from config took 0.02 seconds
+2026-06-10 00:15:49.954 | DEBUG    | data_juicer.config.config:timing_context:43 - Updating operator process took 0.13 seconds
+2026-06-10 00:15:49.954 | INFO     | data_juicer.config.config:config_backup:998 - Back up the input config file [/home/yyw/pipeline_full/prepared_ai/configs/text_pipeline_1781071569251_5000.yaml] into the work_dir [/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000]
+2026-06-10 00:15:49.970 | INFO     | data_juicer.config.config:display_config:1019 - Configuration table: 
+╒══════════════════════════╤══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╕
+│ key                      │ values                                                                                                               │
+╞══════════════════════════╪══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╡
+│ config                   │ [Path_fr(/home/yyw/pipeline_full/prepared_ai/configs/text_pipeline_1781071569251_5000.yaml)]                         │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ auto                     │ False                                                                                                                │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ auto_num                 │ 1000                                                                                                                 │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ hpo_config               │ None                                                                                                                 │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ data_probe_algo          │ 'uniform'                                                                                                            │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ data_probe_ratio         │ 1.0                                                                                                                  │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ project_name             │ 'text_pipeline_1781071569251_5000'                                                                                   │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ executor_type            │ 'default'                                                                                                            │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ dataset_path             │ ''                                                                                                                   │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ dataset                  │ {'configs': [{'format': 'jsonl',                                                                                     │
+│                          │               'path': '/data/data-juicer_dataset/RedPajama/indices/c4_5000.jsonl',                                   │
+│                          │               'type': 'local'}]}                                                                                     │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ generated_dataset_config │ None                                                                                                                 │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ validators               │ []                                                                                                                   │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ work_dir                 │ '/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000'                                                      │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_path              │ '/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000/text_pipeline_1781071569251_5000.jsonl'               │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_type              │ None                                                                                                                 │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_shard_size        │ 0                                                                                                                    │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_in_parallel       │ False                                                                                                                │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_extra_args        │ {}                                                                                                                   │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_aws_credentials   │ None                                                                                                                 │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ keep_stats_in_res_ds     │ False                                                                                                                │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ keep_hashes_in_res_ds    │ False                                                                                                                │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ np                       │ 40                                                                                                                   │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ text_keys                │ 'text'                                                                                                               │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ image_key                │ 'images'                                                                                                             │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ image_bytes_key          │ 'image_bytes'                                                                                                        │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ image_special_token      │ '<__dj__image>'                                                                                                      │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ audio_key                │ 'audios'                                                                                                             │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ audio_special_token      │ '<__dj__audio>'                                                                                                      │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ video_key                │ 'videos'                                                                                                             │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ video_special_token      │ '<__dj__video>'                                                                                                      │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ eoc_special_token        │ '<|__dj__eoc|>'                                                                                                      │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ suffixes                 │ []                                                                                                                   │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ turbo                    │ False                                                                                                                │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ skip_op_error            │ True                                                                                                                 │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_cache                │ False                                                                                                                │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ds_cache_dir             │ '/data/data-juicer_models/datasets'                                                                                  │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ cache_compress           │ None                                                                                                                 │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_monitor             │ True                                                                                                                 │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_checkpoint           │ False                                                                                                                │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ temp_dir                 │ None                                                                                                                 │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_tracer              │ True                                                                                                                 │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_list_to_trace         │ ['whitespace_normalization_mapper', 'fix_unicode_mapper',                                                            │
+│                          │  'remove_specific_chars_mapper', 'remove_repeat_sentences_mapper',                                                   │
+│                          │  'clean_links_mapper', 'perplexity_filter', 'token_num_filter',                                                      │
+│                          │  'flagged_words_filter', 'document_simhash_deduplicator']                                                            │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ trace_num                │ 10                                                                                                                   │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_insight_mining      │ False                                                                                                                │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_list_to_mine          │ []                                                                                                                   │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_fusion                │ False                                                                                                                │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ fusion_strategy          │ 'probe'                                                                                                              │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ adaptive_batch_size      │ False                                                                                                                │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ process                  │ [{'whitespace_normalization_mapper': {'accelerator': None,                                                           │
+│                          │                                       'audio_key': 'audios',                                                         │
+│                          │                                       'cpu_required': None,                                                          │
+│                          │                                       'gpu_required': None,                                                          │
+│                          │                                       'history_key': 'history',                                                      │
+│                          │                                       'image_bytes_key': 'image_bytes',                                              │
+│                          │                                       'image_key': 'images',                                                         │
+│                          │                                       'index_key': None,                                                             │
+│                          │                                       'instruction_key': 'instruction',                                              │
+│                          │                                       'mem_required': None,                                                          │
+│                          │                                       'num_proc': 40,                                                                │
+│                          │                                       'prompt_key': 'prompt',                                                        │
+│                          │                                       'query_key': 'query',                                                          │
+│                          │                                       'response_key': 'response',                                                    │
+│                          │                                       'skip_op_error': True,                                                         │
+│                          │                                       'system_key': 'system',                                                        │
+│                          │                                       'text_key': 'text',                                                            │
+│                          │                                       'turbo': False,                                                                │
+│                          │                                       'video_key': 'videos',                                                         │
+│                          │                                       'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000'}}, │
+│                          │  {'fix_unicode_mapper': {'accelerator': None,                                                                        │
+│                          │                          'audio_key': 'audios',                                                                      │
+│                          │                          'cpu_required': None,                                                                       │
+│                          │                          'gpu_required': None,                                                                       │
+│                          │                          'history_key': 'history',                                                                   │
+│                          │                          'image_bytes_key': 'image_bytes',                                                           │
+│                          │                          'image_key': 'images',                                                                      │
+│                          │                          'index_key': None,                                                                          │
+│                          │                          'instruction_key': 'instruction',                                                           │
+│                          │                          'mem_required': None,                                                                       │
+│                          │                          'normalization': 'NFKC',                                                                    │
+│                          │                          'num_proc': 40,                                                                             │
+│                          │                          'prompt_key': 'prompt',                                                                     │
+│                          │                          'query_key': 'query',                                                                       │
+│                          │                          'response_key': 'response',                                                                 │
+│                          │                          'skip_op_error': True,                                                                      │
+│                          │                          'system_key': 'system',                                                                     │
+│                          │                          'text_key': 'text',                                                                         │
+│                          │                          'turbo': False,                                                                             │
+│                          │                          'video_key': 'videos',                                                                      │
+│                          │                          'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000'}},              │
+│                          │  {'remove_specific_chars_mapper': {'accelerator': None,                                                              │
+│                          │                                    'audio_key': 'audios',                                                            │
+│                          │                                    'chars_to_remove': '◆●■►▼▲▴∆▻▷❖♡□',                                               │
+│                          │                                    'cpu_required': None,                                                             │
+│                          │                                    'gpu_required': None,                                                             │
+│                          │                                    'history_key': 'history',                                                         │
+│                          │                                    'image_bytes_key': 'image_bytes',                                                 │
+│                          │                                    'image_key': 'images',                                                            │
+│                          │                                    'index_key': None,                                                                │
+│                          │                                    'instruction_key': 'instruction',                                                 │
+│                          │                                    'mem_required': None,                                                             │
+│                          │                                    'num_proc': 40,                                                                   │
+│                          │                                    'prompt_key': 'prompt',                                                           │
+│                          │                                    'query_key': 'query',                                                             │
+│                          │                                    'response_key': 'response',                                                       │
+│                          │                                    'skip_op_error': True,                                                            │
+│                          │                                    'system_key': 'system',                                                           │
+│                          │                                    'text_key': 'text',                                                               │
+│                          │                                    'turbo': False,                                                                   │
+│                          │                                    'video_key': 'videos',                                                            │
+│                          │                                    'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000'}},    │
+│                          │  {'remove_repeat_sentences_mapper': {'accelerator': None,                                                            │
+│                          │                                      'audio_key': 'audios',                                                          │
+│                          │                                      'cpu_required': None,                                                           │
+│                          │                                      'gpu_required': None,                                                           │
+│                          │                                      'history_key': 'history',                                                       │
+│                          │                                      'ignore_special_character': True,                                               │
+│                          │                                      'image_bytes_key': 'image_bytes',                                               │
+│                          │                                      'image_key': 'images',                                                          │
+│                          │                                      'index_key': None,                                                              │
+│                          │                                      'instruction_key': 'instruction',                                               │
+│                          │                                      'lowercase': False,                                                             │
+│                          │                                      'mem_required': None,                                                           │
+│                          │                                      'min_repeat_sentence_length': 2,                                                │
+│                          │                                      'num_proc': 40,                                                                 │
+│                          │                                      'prompt_key': 'prompt',                                                         │
+│                          │                                      'query_key': 'query',                                                           │
+│                          │                                      'response_key': 'response',                                                     │
+│                          │                                      'skip_op_error': True,                                                          │
+│                          │                                      'system_key': 'system',                                                         │
+│                          │                                      'text_key': 'text',                                                             │
+│                          │                                      'turbo': False,                                                                 │
+│                          │                                      'video_key': 'videos',                                                          │
+│                          │                                      'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000'}},  │
+│                          │  {'clean_links_mapper': {'accelerator': None,                                                                        │
+│                          │                          'audio_key': 'audios',                                                                      │
+│                          │                          'cpu_required': None,                                                                       │
+│                          │                          'gpu_required': None,                                                                       │
+│                          │                          'history_key': 'history',                                                                   │
+│                          │                          'image_bytes_key': 'image_bytes',                                                           │
+│                          │                          'image_key': 'images',                                                                      │
+│                          │                          'index_key': None,                                                                          │
+│                          │                          'instruction_key': 'instruction',                                                           │
+│                          │                          'mem_required': None,                                                                       │
+│                          │                          'num_proc': 40,                                                                             │
+│                          │                          'pattern': None,                                                                            │
+│                          │                          'prompt_key': 'prompt',                                                                     │
+│                          │                          'query_key': 'query',                                                                       │
+│                          │                          'repl': '',                                                                                 │
+│                          │                          'response_key': 'response',                                                                 │
+│                          │                          'skip_op_error': True,                                                                      │
+│                          │                          'system_key': 'system',                                                                     │
+│                          │                          'text_key': 'text',                                                                         │
+│                          │                          'turbo': False,                                                                             │
+│                          │                          'video_key': 'videos',                                                                      │
+│                          │                          'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000'}},              │
+│                          │  {'perplexity_filter': {'accelerator': None,                                                                         │
+│                          │                         'audio_key': 'audios',                                                                       │
+│                          │                         'batch_size': 3,                                                                             │
+│                          │                         'cpu_required': None,                                                                        │
+│                          │                         'gpu_required': None,                                                                        │
+│                          │                         'history_key': 'history',                                                                    │
+│                          │                         'image_bytes_key': 'image_bytes',                                                            │
+│                          │                         'image_key': 'images',                                                                       │
+│                          │                         'index_key': None,                                                                           │
+│                          │                         'instruction_key': 'instruction',                                                            │
+│                          │                         'lang': 'en',                                                                                │
+│                          │                         'max_closed_interval': True,                                                                 │
+│                          │                         'max_ppl': 657,                                                                              │
+│                          │                         'mem_required': None,                                                                        │
+│                          │                         'min_closed_interval': True,                                                                 │
+│                          │                         'min_ppl': 0,                                                                                │
+│                          │                         'num_proc': 40,                                                                              │
+│                          │                         'prompt_key': 'prompt',                                                                      │
+│                          │                         'query_key': 'query',                                                                        │
+│                          │                         'response_key': 'response',                                                                  │
+│                          │                         'reversed_range': False,                                                                     │
+│                          │                         'skip_op_error': True,                                                                       │
+│                          │                         'stats_export_path': None,                                                                   │
+│                          │                         'system_key': 'system',                                                                      │
+│                          │                         'text_key': 'text',                                                                          │
+│                          │                         'turbo': False,                                                                              │
+│                          │                         'video_key': 'videos',                                                                       │
+│                          │                         'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000'}},               │
+│                          │  {'token_num_filter': {'accelerator': None,                                                                          │
+│                          │                        'audio_key': 'audios',                                                                        │
+│                          │                        'cpu_required': None,                                                                         │
+│                          │                        'gpu_required': None,                                                                         │
+│                          │                        'hf_tokenizer': 'EleutherAI/pythia-14m',                                                      │
+│                          │                        'history_key': 'history',                                                                     │
+│                          │                        'image_bytes_key': 'image_bytes',                                                             │
+│                          │                        'image_key': 'images',                                                                        │
+│                          │                        'index_key': None,                                                                            │
+│                          │                        'instruction_key': 'instruction',                                                             │
+│                          │                        'max_closed_interval': True,                                                                  │
+│                          │                        'max_num': 1501,                                                                              │
+│                          │                        'mem_required': None,                                                                         │
+│                          │                        'min_closed_interval': True,                                                                  │
+│                          │                        'min_num': 299,                                                                               │
+│                          │                        'num_proc': 40,                                                                               │
+│                          │                        'prompt_key': 'prompt',                                                                       │
+│                          │                        'query_key': 'query',                                                                         │
+│                          │                        'response_key': 'response',                                                                   │
+│                          │                        'reversed_range': False,                                                                      │
+│                          │                        'skip_op_error': True,                                                                        │
+│                          │                        'stats_export_path': None,                                                                    │
+│                          │                        'system_key': 'system',                                                                       │
+│                          │                        'text_key': 'text',                                                                           │
+│                          │                        'turbo': False,                                                                               │
+│                          │                        'video_key': 'videos',                                                                        │
+│                          │                        'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000'}},                │
+│                          │  {'flagged_words_filter': {'accelerator': None,                                                                      │
+│                          │                            'audio_key': 'audios',                                                                    │
+│                          │                            'cpu_required': None,                                                                     │
+│                          │                            'flagged_words_dir': '/data/data-juicer_models/assets',                                   │
+│                          │                            'gpu_required': None,                                                                     │
+│                          │                            'history_key': 'history',                                                                 │
+│                          │                            'image_bytes_key': 'image_bytes',                                                         │
+│                          │                            'image_key': 'images',                                                                    │
+│                          │                            'index_key': None,                                                                        │
+│                          │                            'instruction_key': 'instruction',                                                         │
+│                          │                            'lang': 'en',                                                                             │
+│                          │                            'max_closed_interval': True,                                                              │
+│                          │                            'max_ratio': 0.05,                                                                        │
+│                          │                            'mem_required': None,                                                                     │
+│                          │                            'min_closed_interval': True,                                                              │
+│                          │                            'min_ratio': 0.0,                                                                         │
+│                          │                            'num_proc': 40,                                                                           │
+│                          │                            'prompt_key': 'prompt',                                                                   │
+│                          │                            'query_key': 'query',                                                                     │
+│                          │                            'response_key': 'response',                                                               │
+│                          │                            'reversed_range': False,                                                                  │
+│                          │                            'skip_op_error': True,                                                                    │
+│                          │                            'stats_export_path': None,                                                                │
+│                          │                            'system_key': 'system',                                                                   │
+│                          │                            'text_key': 'text',                                                                       │
+│                          │                            'tokenization': False,                                                                    │
+│                          │                            'turbo': False,                                                                           │
+│                          │                            'use_words_aug': False,                                                                   │
+│                          │                            'video_key': 'videos',                                                                    │
+│                          │                            'words_aug_group_sizes': [2],                                                             │
+│                          │                            'words_aug_join_char': '',                                                                │
+│                          │                            'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000'}},            │
+│                          │  {'document_simhash_deduplicator': {'accelerator': None,                                                             │
+│                          │                                     'audio_key': 'audios',                                                           │
+│                          │                                     'cpu_required': None,                                                            │
+│                          │                                     'gpu_required': None,                                                            │
+│                          │                                     'hamming_distance': 4,                                                           │
+│                          │                                     'history_key': 'history',                                                        │
+│                          │                                     'ignore_pattern': '\\p{P}',                                                      │
+│                          │                                     'image_bytes_key': 'image_bytes',                                                │
+│                          │                                     'image_key': 'images',                                                           │
+│                          │                                     'index_key': None,                                                               │
+│                          │                                     'instruction_key': 'instruction',                                                │
+│                          │                                     'lowercase': True,                                                               │
+│                          │                                     'mem_required': None,                                                            │
+│                          │                                     'num_blocks': 6,                                                                 │
+│                          │                                     'num_proc': 40,                                                                  │
+│                          │                                     'prompt_key': 'prompt',                                                          │
+│                          │                                     'query_key': 'query',                                                            │
+│                          │                                     'response_key': 'response',                                                      │
+│                          │                                     'skip_op_error': True,                                                           │
+│                          │                                     'system_key': 'system',                                                          │
+│                          │                                     'text_key': 'text',                                                              │
+│                          │                                     'tokenization': 'character',                                                     │
+│                          │                                     'turbo': False,                                                                  │
+│                          │                                     'video_key': 'videos',                                                           │
+│                          │                                     'window_size': 6,                                                                │
+│                          │                                     'work_dir': '/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000'}}]   │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ percentiles              │ []                                                                                                                   │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_original_dataset  │ False                                                                                                                │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ save_stats_in_one_file   │ False                                                                                                                │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ray_address              │ 'auto'                                                                                                               │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ custom_operator_paths    │ None                                                                                                                 │
+├──────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ debug                    │ False                                                                                                                │
+╘══════════════════════════╧══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╛
+2026-06-10 00:15:49.972 | DEBUG    | data_juicer.config.config:timing_context:43 - Total config initialization time took 0.49 seconds
+2026-06-10 00:15:49.973 | INFO     | data_juicer.tools.process_data:timing_context:15 - Loading configuration took 0.50 seconds
+2026-06-10 00:15:50.142 | INFO     | data_juicer.core.executor.default_executor:__init__:58 - Setting up dataset builder...
+2026-06-10 00:15:50.143 | INFO     | data_juicer.core.data.dataset_builder:__init__:51 - found dataset setting: {'configs': [{'type': 'local', 'path': '/data/data-juicer_dataset/RedPajama/indices/c4_5000.jsonl', 'format': 'jsonl'}]}
+2026-06-10 00:15:50.144 | INFO     | data_juicer.core.data.load_strategy:get_strategy_class:84 - Getting strategy class for exec: default, data_type: local, data_source: None
+2026-06-10 00:15:50.144 | INFO     | data_juicer.core.executor.default_executor:__init__:74 - Preparing exporter...
+2026-06-10 00:15:50.144 | INFO     | data_juicer.core.executor.default_executor:__init__:113 - Preparing tracer...
+2026-06-10 00:15:50.145 | INFO     | data_juicer.tools.process_data:timing_context:15 - Initializing executor took 0.17 seconds
+2026-06-10 00:15:50.145 | INFO     | data_juicer.core.executor.default_executor:run:139 - Loading dataset from dataset builder...
+2026-06-10 00:15:50.168 | INFO     | data_juicer.format.formatter:unify_format:174 - Unifying the input dataset formats...
+2026-06-10 00:15:50.168 | INFO     | data_juicer.format.formatter:unify_format:191 - There are 5000 sample(s) in the original dataset.
+Filter (num_proc=40):   0%|          | 0/5000 [00:00<?, ? examples/s]Filter (num_proc=40):   2%|2         | 125/5000 [00:00<00:31, 153.49 examples/s]Filter (num_proc=40):  38%|###7      | 1875/5000 [00:00<00:01, 2695.19 examples/s]Filter (num_proc=40): 100%|##########| 5000/5000 [00:01<00:00, 4433.27 examples/s]
+2026-06-10 00:15:51.363 | INFO     | data_juicer.format.formatter:unify_format:203 - 5000 samples left after filtering empty text.
+2026-06-10 00:15:51.366 | INFO     | data_juicer.core.executor.default_executor:run:145 - Preparing process operators...
+2026-06-10 00:15:51.367 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:15:51.367 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading sentencepiece...
+2026-06-10 00:15:51.435 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:15:51.435 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading kenlm...
+2026-06-10 00:15:51.824 | INFO     | data_juicer.core.executor.default_executor:run:172 - Processing data...
+2026-06-10 00:15:51.825 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 00:15:51.871 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[whitespace_normalization_mapper] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:15:51.872 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [whitespace_normalization_mapper] running with number of procs:40
+whitespace_normalization_mapper_process (num_proc=40):   0%|          | 0/5000 [00:00<?, ? examples/s]whitespace_normalization_mapper_process (num_proc=40):   2%|2         | 125/5000 [00:00<00:33, 146.83 examples/s]whitespace_normalization_mapper_process (num_proc=40):  20%|##        | 1000/5000 [00:00<00:02, 1381.75 examples/s]whitespace_normalization_mapper_process (num_proc=40):  42%|####2     | 2125/5000 [00:01<00:00, 3011.37 examples/s]whitespace_normalization_mapper_process (num_proc=40): 100%|##########| 5000/5000 [00:01<00:00, 3872.90 examples/s]
+2026-06-10 00:15:53.453 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading torch...
+2026-06-10 00:15:53.934 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [1/9] OP [whitespace_normalization_mapper] Done in 2.109s. Left 5000 samples.
+2026-06-10 00:15:53.934 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 00:15:53.981 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[fix_unicode_mapper] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:15:53.983 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [fix_unicode_mapper] running with number of procs:40
+fix_unicode_mapper_process (num_proc=40):   0%|          | 0/5000 [00:00<?, ? examples/s]2026-06-10 00:15:54.891 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:54.900 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:54.904 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:54.911 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:54.917 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:54.928 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:54.939 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:54.944 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:54.957 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:54.968 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:54.977 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:54.985 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:54.997 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.008 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+fix_unicode_mapper_process (num_proc=40):   2%|2         | 125/5000 [00:00<00:37, 130.06 examples/s]2026-06-10 00:15:55.019 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.030 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.038 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.051 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.065 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.071 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.079 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.087 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.090 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.099 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.106 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.111 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+fix_unicode_mapper_process (num_proc=40):  15%|#5        | 750/5000 [00:01<00:04, 920.95 examples/s]2026-06-10 00:15:55.120 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.128 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.139 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.151 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.159 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.163 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.171 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.180 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.188 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.195 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.201 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.205 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+fix_unicode_mapper_process (num_proc=40):  42%|####2     | 2125/5000 [00:01<00:00, 2914.82 examples/s]2026-06-10 00:15:55.218 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+2026-06-10 00:15:55.222 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading ftfy...
+fix_unicode_mapper_process (num_proc=40):  88%|########7 | 4375/5000 [00:01<00:00, 6435.56 examples/s]fix_unicode_mapper_process (num_proc=40): 100%|##########| 5000/5000 [00:01<00:00, 3436.22 examples/s]
+2026-06-10 00:15:55.994 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [2/9] OP [fix_unicode_mapper] Done in 2.059s. Left 5000 samples.
+2026-06-10 00:15:55.994 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 00:15:56.055 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[remove_specific_chars_mapper] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:15:56.056 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [remove_specific_chars_mapper] running with number of procs:40
+remove_specific_chars_mapper_process (num_proc=40):   0%|          | 0/5000 [00:00<?, ? examples/s]remove_specific_chars_mapper_process (num_proc=40):   2%|2         | 125/5000 [00:00<00:33, 145.28 examples/s]remove_specific_chars_mapper_process (num_proc=40):  28%|##7       | 1375/5000 [00:00<00:01, 1860.04 examples/s]remove_specific_chars_mapper_process (num_proc=40):  52%|#####2    | 2625/5000 [00:01<00:00, 3561.10 examples/s]remove_specific_chars_mapper_process (num_proc=40): 100%|##########| 5000/5000 [00:01<00:00, 3889.10 examples/s]
+2026-06-10 00:15:57.573 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [3/9] OP [remove_specific_chars_mapper] Done in 1.578s. Left 5000 samples.
+2026-06-10 00:15:57.573 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 00:15:57.619 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[remove_repeat_sentences_mapper] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:15:57.621 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [remove_repeat_sentences_mapper] running with number of procs:40
+remove_repeat_sentences_mapper_process (num_proc=40):   0%|          | 0/5000 [00:00<?, ? examples/s]remove_repeat_sentences_mapper_process (num_proc=40):   2%|2         | 125/5000 [00:00<00:34, 142.28 examples/s]remove_repeat_sentences_mapper_process (num_proc=40):  28%|##7       | 1375/5000 [00:01<00:02, 1728.74 examples/s]remove_repeat_sentences_mapper_process (num_proc=40):  50%|#####     | 2500/5000 [00:01<00:00, 3204.29 examples/s]remove_repeat_sentences_mapper_process (num_proc=40): 100%|##########| 5000/5000 [00:01<00:00, 3728.62 examples/s]
+2026-06-10 00:15:59.173 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [4/9] OP [remove_repeat_sentences_mapper] Done in 1.599s. Left 5000 samples.
+2026-06-10 00:15:59.173 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 00:15:59.229 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[clean_links_mapper] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:15:59.230 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [clean_links_mapper] running with number of procs:40
+clean_links_mapper_process (num_proc=40):   0%|          | 0/5000 [00:00<?, ? examples/s]clean_links_mapper_process (num_proc=40):   2%|2         | 125/5000 [00:00<00:33, 145.97 examples/s]clean_links_mapper_process (num_proc=40):  18%|#7        | 875/5000 [00:00<00:03, 1190.66 examples/s]clean_links_mapper_process (num_proc=40):  40%|####      | 2000/5000 [00:01<00:01, 2888.43 examples/s]clean_links_mapper_process (num_proc=40): 100%|##########| 5000/5000 [00:01<00:00, 3978.26 examples/s]
+2026-06-10 00:16:01.294 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [5/9] OP [clean_links_mapper] Done in 2.120s. Left 5000 samples.
+2026-06-10 00:16:01.295 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 00:16:01.354 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[perplexity_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:16:01.356 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [perplexity_filter] running with number of procs:40
+Adding new column for stats (num_proc=40):   0%|          | 0/5000 [00:00<?, ? examples/s]Adding new column for stats (num_proc=40):   2%|2         | 125/5000 [00:00<00:33, 144.78 examples/s]Adding new column for stats (num_proc=40): 100%|##########| 5000/5000 [00:00<00:00, 7027.92 examples/s]Adding new column for stats (num_proc=40): 100%|##########| 5000/5000 [00:01<00:00, 4540.05 examples/s]
+2026-06-10 00:16:02.535 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[perplexity_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:16:02.536 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [perplexity_filter] running with number of procs:40
+perplexity_filter_compute_stats (num_proc=40):   0%|          | 0/5000 [00:00<?, ? examples/s]2026-06-10 00:16:03.434 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-288)
+2026-06-10 00:16:03.434 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.443 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-289)
+2026-06-10 00:16:03.444 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.448 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-290)
+2026-06-10 00:16:03.449 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.455 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-291)
+2026-06-10 00:16:03.456 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.462 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-292)
+2026-06-10 00:16:03.463 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.471 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-293)
+2026-06-10 00:16:03.472 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.475 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-294)
+2026-06-10 00:16:03.476 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.484 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-295)
+2026-06-10 00:16:03.485 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.496 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-288)
+2026-06-10 00:16:03.496 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.505 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-296)
+2026-06-10 00:16:03.506 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.516 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-297)
+2026-06-10 00:16:03.518 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.525 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-292)
+2026-06-10 00:16:03.526 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.527 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-298)
+2026-06-10 00:16:03.528 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.537 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-290)
+2026-06-10 00:16:03.537 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-293)
+2026-06-10 00:16:03.537 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.537 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.538 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-294)
+2026-06-10 00:16:03.538 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.539 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-299)
+2026-06-10 00:16:03.540 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-291)
+2026-06-10 00:16:03.540 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.540 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.547 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-289)
+2026-06-10 00:16:03.547 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.551 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-295)
+2026-06-10 00:16:03.551 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-300)
+2026-06-10 00:16:03.552 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.552 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.564 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-301)
+2026-06-10 00:16:03.565 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.571 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-296)
+2026-06-10 00:16:03.571 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.578 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-302)
+2026-06-10 00:16:03.579 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.581 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-297)
+2026-06-10 00:16:03.582 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.593 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-298)
+2026-06-10 00:16:03.594 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.594 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-303)
+2026-06-10 00:16:03.595 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.601 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-299)
+2026-06-10 00:16:03.601 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.604 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-304)
+2026-06-10 00:16:03.605 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.611 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-305)
+2026-06-10 00:16:03.612 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.619 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-300)
+2026-06-10 00:16:03.619 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-306)
+2026-06-10 00:16:03.620 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.620 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.622 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-307)
+2026-06-10 00:16:03.623 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.630 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-308)
+2026-06-10 00:16:03.630 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-301)
+2026-06-10 00:16:03.631 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.631 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.638 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-309)
+2026-06-10 00:16:03.639 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.643 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-310)
+2026-06-10 00:16:03.645 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.646 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-302)
+2026-06-10 00:16:03.646 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.651 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-311)
+2026-06-10 00:16:03.653 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.659 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-312)
+2026-06-10 00:16:03.660 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.662 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-303)
+2026-06-10 00:16:03.662 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.666 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-313)
+2026-06-10 00:16:03.667 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.672 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-304)
+2026-06-10 00:16:03.672 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.673 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-314)
+2026-06-10 00:16:03.674 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.677 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-305)
+2026-06-10 00:16:03.678 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.683 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-315)
+2026-06-10 00:16:03.684 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.688 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-316)
+2026-06-10 00:16:03.689 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.691 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-307)
+2026-06-10 00:16:03.692 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.693 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-306)
+2026-06-10 00:16:03.694 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.697 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-317)
+2026-06-10 00:16:03.698 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.703 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-308)
+2026-06-10 00:16:03.703 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.707 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-318)
+2026-06-10 00:16:03.708 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.710 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-319)
+2026-06-10 00:16:03.712 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.718 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-320)
+2026-06-10 00:16:03.719 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.725 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-321)
+2026-06-10 00:16:03.726 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.730 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-309)
+2026-06-10 00:16:03.731 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.732 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-322)
+2026-06-10 00:16:03.733 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.739 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-311)
+2026-06-10 00:16:03.739 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.740 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-323)
+2026-06-10 00:16:03.741 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.742 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-310)
+2026-06-10 00:16:03.742 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.745 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-313)
+2026-06-10 00:16:03.745 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.747 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-312)
+2026-06-10 00:16:03.748 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.748 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-324)
+2026-06-10 00:16:03.749 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+perplexity_filter_compute_stats (num_proc=40):   0%|          | 3/5000 [00:01<31:50,  2.62 examples/s]2026-06-10 00:16:03.755 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-325)
+2026-06-10 00:16:03.756 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.763 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-314)
+2026-06-10 00:16:03.763 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.764 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-326)
+2026-06-10 00:16:03.765 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.770 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_sentencepiece_for_lang at 0x7fca71f6d620>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-327)
+2026-06-10 00:16:03.771 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:670 - Loading sentencepiece model...
+2026-06-10 00:16:03.772 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-315)
+2026-06-10 00:16:03.773 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.777 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-318)
+2026-06-10 00:16:03.778 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.780 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-316)
+2026-06-10 00:16:03.781 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.786 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-320)
+2026-06-10 00:16:03.786 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.787 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-317)
+2026-06-10 00:16:03.787 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.803 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-319)
+2026-06-10 00:16:03.803 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.808 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-323)
+2026-06-10 00:16:03.808 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.817 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-324)
+2026-06-10 00:16:03.817 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.818 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-321)
+2026-06-10 00:16:03.819 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.824 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-322)
+2026-06-10 00:16:03.824 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.837 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-327)
+2026-06-10 00:16:03.838 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+2026-06-10 00:16:03.842 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-325)
+2026-06-10 00:16:03.843 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+perplexity_filter_compute_stats (num_proc=40):   3%|3         | 168/5000 [00:01<00:26, 183.79 examples/s]2026-06-10 00:16:03.857 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_kenlm_model at 0x7fca71f6d1c0>, lang='en') not found in MODEL_ZOO (ForkPoolWorker-326)
+2026-06-10 00:16:03.858 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:526 - Loading kenlm language model...
+perplexity_filter_compute_stats (num_proc=40):  16%|#5        | 775/5000 [00:01<00:04, 972.81 examples/s]perplexity_filter_compute_stats (num_proc=40):  37%|###6      | 1840/5000 [00:01<00:01, 2527.93 examples/s]perplexity_filter_compute_stats (num_proc=40):  60%|#####9    | 2994/5000 [00:01<00:00, 4209.43 examples/s]perplexity_filter_compute_stats (num_proc=40):  91%|#########1| 4556/5000 [00:01<00:00, 6563.61 examples/s]perplexity_filter_compute_stats (num_proc=40): 100%|##########| 5000/5000 [00:02<00:00, 2411.40 examples/s]
+2026-06-10 00:16:04.713 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[perplexity_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:16:04.713 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [perplexity_filter] running with number of procs:40
+perplexity_filter_process (num_proc=40):   0%|          | 0/5000 [00:00<?, ? examples/s]perplexity_filter_process (num_proc=40):   2%|2         | 125/5000 [00:00<00:33, 145.51 examples/s]perplexity_filter_process (num_proc=40):  15%|#5        | 750/5000 [00:00<00:04, 976.65 examples/s]perplexity_filter_process (num_proc=40):  28%|##7       | 1375/5000 [00:01<00:02, 1809.36 examples/s]perplexity_filter_process (num_proc=40): 100%|##########| 5000/5000 [00:01<00:00, 3752.86 examples/s]
+2026-06-10 00:16:06.774 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [6/9] OP [perplexity_filter] Done in 5.479s. Left 3202 samples.
+2026-06-10 00:16:06.775 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 00:16:06.832 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[token_num_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:16:06.834 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [token_num_filter] running with number of procs:40
+token_num_filter_compute_stats (num_proc=40):   0%|          | 0/3202 [00:00<?, ? examples/s]2026-06-10 00:16:08.200 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-370)
+2026-06-10 00:16:08.200 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.217 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-371)
+2026-06-10 00:16:08.218 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.219 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-372)
+2026-06-10 00:16:08.219 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.227 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-373)
+2026-06-10 00:16:08.228 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.237 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-374)
+2026-06-10 00:16:08.238 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.245 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-375)
+2026-06-10 00:16:08.246 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.254 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-376)
+2026-06-10 00:16:08.255 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.269 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-377)
+2026-06-10 00:16:08.270 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.290 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-378)
+2026-06-10 00:16:08.291 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.293 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-379)
+2026-06-10 00:16:08.294 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.301 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-380)
+2026-06-10 00:16:08.302 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.309 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-381)
+2026-06-10 00:16:08.310 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.317 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-382)
+2026-06-10 00:16:08.318 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.337 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-383)
+2026-06-10 00:16:08.338 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.351 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-384)
+2026-06-10 00:16:08.352 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.358 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-386)
+2026-06-10 00:16:08.359 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.362 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-385)
+2026-06-10 00:16:08.363 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.374 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-387)
+2026-06-10 00:16:08.375 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.381 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-388)
+2026-06-10 00:16:08.382 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.389 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-389)
+2026-06-10 00:16:08.390 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.411 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-391)
+2026-06-10 00:16:08.412 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.412 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-390)
+2026-06-10 00:16:08.413 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.434 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-392)
+2026-06-10 00:16:08.435 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.441 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-393)
+2026-06-10 00:16:08.442 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.445 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-394)
+2026-06-10 00:16:08.446 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.450 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-395)
+2026-06-10 00:16:08.451 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.471 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-396)
+2026-06-10 00:16:08.472 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.480 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-397)
+2026-06-10 00:16:08.481 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.490 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-398)
+2026-06-10 00:16:08.491 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.502 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-399)
+2026-06-10 00:16:08.503 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-400)
+2026-06-10 00:16:08.503 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.504 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.523 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-402)
+2026-06-10 00:16:08.524 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.527 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-401)
+2026-06-10 00:16:08.528 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.547 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-403)
+2026-06-10 00:16:08.548 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.557 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-404)
+2026-06-10 00:16:08.558 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.562 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-405)
+2026-06-10 00:16:08.563 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.576 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-406)
+2026-06-10 00:16:08.577 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.584 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-407)
+2026-06-10 00:16:08.585 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+2026-06-10 00:16:08.594 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-408)
+2026-06-10 00:16:08.595 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2026-06-10 00:16:08.606 | DEBUG    | data_juicer.utils.model_utils:get_model:1194 - functools.partial(<function prepare_huggingface_model at 0x7fca71f6d120>, pretrained_model_name_or_path='EleutherAI/pythia-14m', return_model=False) not found in MODEL_ZOO (ForkPoolWorker-409)
+2026-06-10 00:16:08.607 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading transformers...
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/ray/anaconda3/lib/python3.11/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+token_num_filter_compute_stats (num_proc=40):   0%|          | 1/3202 [00:04<3:57:09,  4.45s/ examples]token_num_filter_compute_stats (num_proc=40):   1%|          | 28/3202 [00:04<06:08,  8.62 examples/s] token_num_filter_compute_stats (num_proc=40):   3%|3         | 99/3202 [00:04<01:20, 38.41 examples/s]token_num_filter_compute_stats (num_proc=40):   6%|5         | 186/3202 [00:04<00:35, 85.85 examples/s]token_num_filter_compute_stats (num_proc=40):  10%|#         | 328/3202 [00:04<00:15, 185.82 examples/s]token_num_filter_compute_stats (num_proc=40):  15%|#4        | 471/3202 [00:04<00:08, 305.81 examples/s]token_num_filter_compute_stats (num_proc=40):  21%|##        | 670/3202 [00:05<00:04, 509.19 examples/s]token_num_filter_compute_stats (num_proc=40):  30%|##9       | 960/3202 [00:05<00:02, 859.87 examples/s]token_num_filter_compute_stats (num_proc=40):  40%|###9      | 1274/3202 [00:05<00:01, 1249.39 examples/s]token_num_filter_compute_stats (num_proc=40):  53%|#####2    | 1690/3202 [00:05<00:00, 1825.55 examples/s]token_num_filter_compute_stats (num_proc=40):  69%|######8   | 2195/3202 [00:05<00:00, 2510.55 examples/s]token_num_filter_compute_stats (num_proc=40):  87%|########7 | 2789/3202 [00:05<00:00, 3290.79 examples/s]token_num_filter_compute_stats (num_proc=40): 100%|##########| 3202/3202 [00:05<00:00, 3463.81 examples/s]token_num_filter_compute_stats (num_proc=40): 100%|##########| 3202/3202 [00:06<00:00, 529.78 examples/s] 
+2026-06-10 00:16:13.456 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[token_num_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:16:13.456 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [token_num_filter] running with number of procs:40
+token_num_filter_process (num_proc=40):   0%|          | 0/3202 [00:00<?, ? examples/s]token_num_filter_process (num_proc=40):   3%|2         | 81/3202 [00:00<00:34, 90.30 examples/s]token_num_filter_process (num_proc=40):  13%|#2        | 402/3202 [00:01<00:05, 498.15 examples/s]token_num_filter_process (num_proc=40):  23%|##2       | 722/3202 [00:01<00:02, 896.34 examples/s]token_num_filter_process (num_proc=40):  85%|########5 | 2722/3202 [00:01<00:00, 4321.87 examples/s]token_num_filter_process (num_proc=40): 100%|##########| 3202/3202 [00:01<00:00, 2276.22 examples/s]
+2026-06-10 00:16:15.453 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [7/9] OP [token_num_filter] Done in 8.677s. Left 1484 samples.
+2026-06-10 00:16:15.454 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 00:16:15.540 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[flagged_words_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:16:15.541 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [flagged_words_filter] running with number of procs:40
+flagged_words_filter_compute_stats (num_proc=40):   0%|          | 0/1484 [00:00<?, ? examples/s]flagged_words_filter_compute_stats (num_proc=40):   3%|2         | 38/1484 [00:01<00:41, 35.18 examples/s]flagged_words_filter_compute_stats (num_proc=40):  13%|#2        | 189/1484 [00:01<00:06, 199.47 examples/s]flagged_words_filter_compute_stats (num_proc=40):  23%|##2       | 337/1484 [00:01<00:03, 372.58 examples/s]flagged_words_filter_compute_stats (num_proc=40):  33%|###2      | 485/1484 [00:01<00:01, 544.25 examples/s]flagged_words_filter_compute_stats (num_proc=40):  43%|####2     | 633/1484 [00:01<00:01, 695.21 examples/s]flagged_words_filter_compute_stats (num_proc=40):  53%|#####2    | 781/1484 [00:01<00:00, 841.00 examples/s]flagged_words_filter_compute_stats (num_proc=40):  63%|######2   | 929/1484 [00:01<00:00, 953.98 examples/s]flagged_words_filter_compute_stats (num_proc=40):  88%|########7 | 1299/1484 [00:01<00:00, 1568.16 examples/s]flagged_words_filter_compute_stats (num_proc=40): 100%|##########| 1484/1484 [00:02<00:00, 686.20 examples/s] 
+2026-06-10 00:16:18.408 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[flagged_words_filter] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:16:18.409 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [flagged_words_filter] running with number of procs:40
+flagged_words_filter_process (num_proc=40):   0%|          | 0/1484 [00:00<?, ? examples/s]flagged_words_filter_process (num_proc=40):   3%|2         | 38/1484 [00:00<00:36, 40.03 examples/s]flagged_words_filter_process (num_proc=40):  13%|#2        | 189/1484 [00:01<00:05, 232.26 examples/s]flagged_words_filter_process (num_proc=40):  25%|##5       | 374/1484 [00:01<00:02, 480.97 examples/s]flagged_words_filter_process (num_proc=40):  35%|###5      | 522/1484 [00:01<00:02, 448.87 examples/s]flagged_words_filter_process (num_proc=40):  48%|####7     | 707/1484 [00:01<00:01, 650.31 examples/s]flagged_words_filter_process (num_proc=40):  60%|######    | 892/1484 [00:01<00:00, 836.41 examples/s]flagged_words_filter_process (num_proc=40):  73%|#######2  | 1077/1484 [00:01<00:00, 1019.81 examples/s]flagged_words_filter_process (num_proc=40):  85%|########5 | 1262/1484 [00:01<00:00, 1145.39 examples/s]flagged_words_filter_process (num_proc=40): 100%|##########| 1484/1484 [00:02<00:00, 1360.86 examples/s]flagged_words_filter_process (num_proc=40): 100%|##########| 1484/1484 [00:02<00:00, 657.91 examples/s] 
+2026-06-10 00:16:20.766 | WARNING  | data_juicer.core.tracer:trace_filter:143 - Datasets before and after op [flagged_words_filter] are all the same. Thus no comparison results would be generated.
+2026-06-10 00:16:21.166 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [8/9] OP [flagged_words_filter] Done in 5.711s. Left 1484 samples.
+2026-06-10 00:16:21.166 | DEBUG    | data_juicer.utils.process_utils:setup_mp:40 - Setting multiprocess start method to 'fork'
+2026-06-10 00:16:21.251 | INFO     | data_juicer.utils.process_utils:calculate_np:128 - Set the auto `num_proc` to 64 of Op[document_simhash_deduplicator] based on the required memory: NoneGB and required cpu: 1.
+2026-06-10 00:16:21.252 | DEBUG    | data_juicer.ops.base_op:runtime_np:241 - Op [document_simhash_deduplicator] running with number of procs:40
+document_simhash_deduplicator_compute_hash (num_proc=40):   0%|          | 0/1484 [00:00<?, ? examples/s]2026-06-10 00:16:22.270 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.286 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.293 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.298 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.317 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.321 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.327 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+document_simhash_deduplicator_compute_hash (num_proc=40):   1%|          | 10/1484 [00:00<02:19, 10.53 examples/s]2026-06-10 00:16:22.341 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.350 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.363 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.373 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.381 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.385 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.401 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.415 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.423 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+document_simhash_deduplicator_compute_hash (num_proc=40):  10%|9         | 143/1484 [00:01<00:07, 182.22 examples/s]2026-06-10 00:16:22.432 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.450 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.453 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.460 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.471 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.490 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.495 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.507 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.518 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+document_simhash_deduplicator_compute_hash (num_proc=40):  19%|#9        | 285/1484 [00:01<00:03, 374.55 examples/s]2026-06-10 00:16:22.536 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.537 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.554 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.564 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.583 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.595 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.606 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.614 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.632 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.648 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+document_simhash_deduplicator_compute_hash (num_proc=40):  28%|##8       | 419/1484 [00:01<00:01, 534.09 examples/s]2026-06-10 00:16:22.663 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.668 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.677 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.688 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:22.698 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+document_simhash_deduplicator_compute_hash (num_proc=40):  77%|#######7  | 1145/1484 [00:01<00:00, 1881.45 examples/s]document_simhash_deduplicator_compute_hash (num_proc=40):  99%|#########9| 1474/1484 [00:01<00:00, 2033.02 examples/s]document_simhash_deduplicator_compute_hash (num_proc=40): 100%|##########| 1484/1484 [00:01<00:00, 879.56 examples/s] 
+2026-06-10 00:16:23.105 | INFO     | data_juicer.ops.deduplicator.document_simhash_deduplicator:process:151 - Start querying 1484 samples.
+2026-06-10 00:16:23.106 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading simhash...
+2026-06-10 00:16:23.135 | INFO     | data_juicer.ops.deduplicator.document_simhash_deduplicator:process:157 - Querying done, found 0 matches.
+2026-06-10 00:16:23.187 | INFO     | data_juicer.ops.deduplicator.document_simhash_deduplicator:process:204 - Found 0 clusters and 0 hashes.
+Filter:   0%|          | 0/1484 [00:00<?, ? examples/s]Filter: 100%|##########| 1484/1484 [00:00<00:00, 21932.78 examples/s]
+2026-06-10 00:16:23.268 | INFO     | data_juicer.ops.deduplicator.document_simhash_deduplicator:process:236 - Keep 1484 samples after SimHash dedup.
+2026-06-10 00:16:23.268 | WARNING  | data_juicer.core.tracer:trace_deduplicator:217 - Datasets before and after op [document_simhash_deduplicator] are all the same. Thus no comparison results would be generated.
+2026-06-10 00:16:23.390 | INFO     | data_juicer.core.data.dj_dataset:process:310 - [9/9] OP [document_simhash_deduplicator] Done in 2.223s. Left 1484 samples.
+2026-06-10 00:16:31.173 | INFO     | data_juicer.utils.logger_utils:make_log_summarization:258 - Processing finished with:
+Warnings: 4
+Errors: 0
+
+Error/Warning details can be found in the log file [/home/yyw/pipeline_full/runs/text_pipeline_1781071569251_5000/log/export_text_pipeline_1781071569251_5000.jsonl_time_20260610001549.txt] and its related log files.
+2026-06-10 00:16:31.184 | INFO     | data_juicer.core.executor.default_executor:run:184 - All OPs are done in 39.359s.
+2026-06-10 00:16:31.184 | INFO     | data_juicer.core.executor.default_executor:run:188 - Exporting dataset to disk...
+2026-06-10 00:16:31.184 | INFO     | data_juicer.core.exporter:_export_impl:154 - Exporting computed stats into a single file...
+Creating json from Arrow format:   0%|          | 0/2 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|##########| 2/2 [00:00<00:00, 87.56ba/s]
+2026-06-10 00:16:31.257 | INFO     | data_juicer.core.exporter:_export_impl:190 - Export dataset into a single file...
+Creating json from Arrow format:   0%|          | 0/2 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|##########| 2/2 [00:00<00:00, 13.74ba/s]Creating json from Arrow format: 100%|##########| 2/2 [00:00<00:00, 13.66ba/s]
+2026-06-10 00:16:31.415 | INFO     | data_juicer.tools.process_data:timing_context:15 - Running executor took 41.27 seconds

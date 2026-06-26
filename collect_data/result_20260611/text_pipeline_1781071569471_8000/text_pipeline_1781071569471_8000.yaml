@@ -1,0 +1,88 @@
+project_name: text_pipeline_1781071569471_8000
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/c4_8000.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results/text/text_pipeline_1781071569471_8000.jsonl
+np: 30
+use_cache: false
+open_tracer: true
+process:
+- punctuation_normalization_mapper: null
+- remove_table_text_mapper: null
+- clean_email_mapper: null
+- remove_specific_chars_mapper: null
+- clean_copyright_mapper: null
+- clean_links_mapper: null
+- sentence_split_mapper:
+    lang: en
+- clean_ip_mapper: null
+- text_length_filter:
+    min_len: 839
+    max_len: 4931
+- flagged_words_filter:
+    lang: en
+    tokenization: false
+    max_ratio: 0.05
+    use_words_aug: false
+- average_line_length_filter:
+    min_len: 47
+    max_len: 2984
+    batch_size: 3
+- text_chunk_mapper:
+    max_len: 479
+    split_pattern: \n
+- stopwords_filter:
+    lang: en
+    tokenization: true
+    min_ratio: 0.4
+    use_words_aug: true
+- perplexity_filter:
+    lang: en
+    max_ppl: 1602
+    batch_size: 2
+- word_repetition_filter:
+    lang: en
+    tokenization: true
+    rep_len: 10
+    min_ratio: 0.1
+    max_ratio: 0.3
+    batch_size: 3
+- token_num_filter:
+    hf_tokenizer: EleutherAI/pythia-14m
+    min_num: 202
+    max_num: 315
+- maximum_line_length_filter:
+    min_len: 293
+    max_len: 1108
+    batch_size: 2
+- words_num_filter:
+    lang: en
+    tokenization: true
+    min_num: 64
+    max_num: 286
+    batch_size: 2
+- document_simhash_deduplicator:
+    tokenization: space
+    lowercase: false
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- punctuation_normalization_mapper
+- remove_table_text_mapper
+- clean_email_mapper
+- remove_specific_chars_mapper
+- clean_copyright_mapper
+- clean_links_mapper
+- sentence_split_mapper
+- clean_ip_mapper
+- text_length_filter
+- flagged_words_filter
+- average_line_length_filter
+- stopwords_filter
+- perplexity_filter
+- word_repetition_filter
+- token_num_filter
+- maximum_line_length_filter
+- words_num_filter
+- document_simhash_deduplicator

@@ -1,0 +1,88 @@
+project_name: text_pipeline_1781071569679_2000
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/c4_2000.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results/text/text_pipeline_1781071569679_2000.jsonl
+np: 40
+use_cache: false
+open_tracer: true
+process:
+- whitespace_normalization_mapper: null
+- punctuation_normalization_mapper: null
+- clean_email_mapper: null
+- remove_long_words_mapper:
+    min_len: 4
+    max_len: 18
+- sentence_split_mapper:
+    lang: en
+- clean_ip_mapper: null
+- clean_copyright_mapper: null
+- remove_specific_chars_mapper: null
+- text_entity_dependency_filter:
+    lang: en
+    any_or_all: any
+- words_num_filter:
+    lang: en
+    tokenization: true
+    min_num: 125
+    max_num: 257
+    batch_size: 2
+- text_chunk_mapper:
+    max_len: 806
+    split_pattern: \n
+- word_repetition_filter:
+    lang: en
+    tokenization: false
+    rep_len: 15
+    min_ratio: 0.1
+    max_ratio: 0.5
+    batch_size: 2
+- text_action_filter:
+    lang: en
+- perplexity_filter:
+    lang: en
+    max_ppl: 973
+    batch_size: 2
+- flagged_words_filter:
+    lang: en
+    tokenization: false
+    max_ratio: 0.045
+    use_words_aug: false
+- alphanumeric_filter:
+    tokenization: true
+    min_ratio: 0.2
+    max_ratio: 0.8
+    batch_size: 2
+    num_proc: 2
+- text_length_filter:
+    min_len: 529
+    max_len: 4791
+- token_num_filter:
+    hf_tokenizer: EleutherAI/pythia-14m
+    min_num: 71
+    max_num: 1462
+- document_simhash_deduplicator:
+    tokenization: space
+    lowercase: true
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- whitespace_normalization_mapper
+- punctuation_normalization_mapper
+- clean_email_mapper
+- remove_long_words_mapper
+- sentence_split_mapper
+- clean_ip_mapper
+- clean_copyright_mapper
+- remove_specific_chars_mapper
+- text_entity_dependency_filter
+- words_num_filter
+- word_repetition_filter
+- text_action_filter
+- perplexity_filter
+- flagged_words_filter
+- alphanumeric_filter
+- text_length_filter
+- token_num_filter
+- document_simhash_deduplicator

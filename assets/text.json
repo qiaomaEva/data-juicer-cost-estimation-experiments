@@ -1,0 +1,1134 @@
+{
+    "stages": [
+        {
+            "id": 0,
+            "description": "文本规范化",
+            "min_operator_count": 1,
+            "max_operator_count": 3,
+            "operator_total": 3
+        },
+        {
+            "id": 1,
+            "description": "噪声与隐私信息清理",
+            "min_operator_count": 3,
+            "max_operator_count": 9,
+            "operator_total": 11
+        },
+        {
+            "id": 2,
+            "description": "基于质量的过滤",
+            "min_operator_count": 3,
+            "max_operator_count": 10,
+            "operator_total": 16
+        },
+        {
+            "id": 3,
+            "description": "文档级去重",
+            "min_operator_count": 1,
+            "max_operator_count": 1,
+            "operator_total": 3
+        },
+        {
+            "id": 4,
+            "description": "大语言模型处理",
+            "min_operator_count": 0,
+            "max_operator_count": 0,
+            "operator_total": 9
+        }
+    ],
+    "operators": [
+        {
+            "name": "fix_unicode_mapper",
+            "type": "mapper",
+            "stage": 0,
+            "layer": 1,
+            "description": "修复文本示例中的unicode错误。",
+            "params": [
+                {
+                    "name": "normalization",
+                    "type": "categorical",
+                    "values": [
+                        "NFC",
+                        "NFKC",
+                        "NFD",
+                        "NFKD"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "whitespace_normalization_mapper",
+            "type": "mapper",
+            "stage": 0,
+            "layer": 2,
+            "description": "将文本样本中各种类型的空白字符规范化为标准空格。",
+            "params": []
+        },
+        {
+            "name": "punctuation_normalization_mapper",
+            "type": "mapper",
+            "stage": 0,
+            "layer": 3,
+            "description": "将unicode标点规范化为文本示例中的英语等效项。",
+            "params": []
+        },
+        {
+            "name": "clean_copyright_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 4,
+            "description": "清除文本示例开头的版权注释。",
+            "params": []
+        },
+        {
+            "name": "clean_email_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 5,
+            "description": "使用正则表达式从文本示例中清除电子邮件地址。",
+            "params": []
+        },
+        {
+            "name": "clean_ip_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 6,
+            "description": "从文本示例中清除IPv4和IPv6地址。",
+            "params": []
+        },
+        {
+            "name": "clean_links_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 7,
+            "description": "映射器来清理链接，如文本示例中的http/https/ftp。",
+            "params": []
+        },
+        {
+            "name": "remove_table_text_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 8,
+            "description": "映射器从文本样本中删除表文本。",
+            "params": []
+        },
+        {
+            "name": "remove_specific_chars_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 9,
+            "description": "从文本示例中删除特定字符。",
+            "params": []
+        },
+        {
+            "name": "remove_long_words_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 10,
+            "description": "映射器删除特定范围内的长词。",
+            "params": [
+                {
+                    "name": "min_len",
+                    "type": "continuous",
+                    "range": [
+                        3,
+                        5
+                    ],
+                    "int": true
+                },
+                {
+                    "name": "max_len",
+                    "type": "continuous",
+                    "range": [
+                        10,
+                        20
+                    ],
+                    "int": true,
+                    "gt": "min_len"
+                }
+            ]
+        },
+        {
+            "name": "remove_words_with_incorrect_substrings_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 11,
+            "description": "映射程序删除包含指定的不正确子字符串的单词。",
+            "params": [
+                {
+                    "name": "lang",
+                    "type": "categorical",
+                    "values": [
+                        "en"
+                    ]
+                },
+                {
+                    "name": "tokenization",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "name": "substrings",
+                    "type": "categorical",
+                    "values": [
+                        [
+                            "http",
+                            "www",
+                            ".com",
+                            "href",
+                            "//"
+                        ],
+                        [
+                            "<",
+                            ">",
+                            "=",
+                            "&",
+                            "?"
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "replace_content_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 12,
+            "description": "用指定的替换字符串替换与特定正则表达式模式匹配的文本中的内容。",
+            "params": [
+                {
+                    "name": "pattern",
+                    "type": "categorical",
+                    "values": [
+                        "●■",
+                        "\\d+(?:,\\d+)*"
+                    ]
+                },
+                {
+                    "name": "repl",
+                    "type": "categorical",
+                    "values": [
+                        "",
+                        "<hide>"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "remove_repeat_sentences_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 13,
+            "description": "映射器删除文本样本中的重复句子。",
+            "params": [
+                {
+                    "name": "lowercase",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "sentence_split_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 14,
+            "description": "根据指定的语言将文本样本拆分为单个句子。",
+            "params": [
+                {
+                    "name": "lang",
+                    "type": "categorical",
+                    "values": [
+                        "en"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "alphanumeric_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 15,
+            "description": "过滤器，以保持具有特定范围内的字母/数字比率的样本。",
+            "params": [
+                {
+                    "name": "tokenization",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "name": "min_ratio",
+                    "type": "categorical",
+                    "values": [
+                        0.1,
+                        0.2,
+                        0.3
+                    ]
+                },
+                {
+                    "name": "max_ratio",
+                    "type": "categorical",
+                    "values": [
+                        0.8,
+                        0.9
+                    ]
+                },
+                {
+                    "name": "batch_size",
+                    "type": "categorical",
+                    "values": [
+                        2,
+                        3
+                    ]
+                },
+                {
+                    "name": "num_proc",
+                    "type": "categorical",
+                    "values": [
+                        1,
+                        2,
+                        4
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "average_line_length_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 16,
+            "description": "过滤器，以保持平均线长度在特定范围内的样本。",
+            "params": [
+                {
+                    "name": "min_len",
+                    "type": "continuous",
+                    "range": [
+                        10,
+                        100
+                    ],
+                    "int": true
+                },
+                {
+                    "name": "max_len",
+                    "type": "continuous",
+                    "range": [
+                        2000,
+                        8000
+                    ],
+                    "int": true,
+                    "gt": "min_len"
+                },
+                {
+                    "name": "batch_size",
+                    "type": "categorical",
+                    "values": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "character_repetition_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 17,
+            "description": "过滤器将具有字符级n-gram重复比的样本保持在特定范围内。",
+            "params": [
+                {
+                    "name": "rep_len",
+                    "type": "categorical",
+                    "values": [
+                        3,
+                        5,
+                        10,
+                        15
+                    ]
+                },
+                {
+                    "name": "min_ratio",
+                    "type": "categorical",
+                    "values": [
+                        0.0,
+                        0.1
+                    ]
+                },
+                {
+                    "name": "max_ratio",
+                    "type": "categorical",
+                    "values": [
+                        0.3,
+                        0.4,
+                        0.5,
+                        0.6
+                    ]
+                },
+                {
+                    "name": "batch_size",
+                    "type": "categorical",
+                    "values": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "flagged_words_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 18,
+            "description": "过滤器将标记词比率的样本保留在指定范围内。",
+            "params": [
+                {
+                    "name": "lang",
+                    "type": "categorical",
+                    "values": [
+                        "en"
+                    ]
+                },
+                {
+                    "name": "tokenization",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "name": "max_ratio",
+                    "type": "categorical",
+                    "values": [
+                        0.045,
+                        0.05
+                    ]
+                },
+                {
+                    "name": "use_words_aug",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "language_id_score_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 19,
+            "description": "过滤器以保留置信度高于阈值的特定语言的样本。",
+            "params": [
+                {
+                    "name": "lang",
+                    "type": "categorical",
+                    "values": [
+                        "en",
+                        [
+                            "en",
+                            "zh"
+                        ]
+                    ]
+                },
+                {
+                    "name": "min_score",
+                    "type": "categorical",
+                    "values": [
+                        0.7,
+                        0.8
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "maximum_line_length_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 20,
+            "description": "筛选器将最大行长度的样本保持在指定范围内。",
+            "params": [
+                {
+                    "name": "min_len",
+                    "type": "continuous",
+                    "range": [
+                        100,
+                        400
+                    ],
+                    "int": true
+                },
+                {
+                    "name": "max_len",
+                    "type": "continuous",
+                    "range": [
+                        400,
+                        1200
+                    ],
+                    "int": true,
+                    "gt": "min_len"
+                },
+                {
+                    "name": "batch_size",
+                    "type": "categorical",
+                    "values": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "perplexity_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 21,
+            "description": "过滤以保持困惑分数在指定范围内的样本。",
+            "params": [
+                {
+                    "name": "lang",
+                    "type": "categorical",
+                    "values": [
+                        "en"
+                    ]
+                },
+                {
+                    "name": "max_ppl",
+                    "type": "continuous",
+                    "range": [
+                        500,
+                        3000
+                    ],
+                    "int": true
+                },
+                {
+                    "name": "batch_size",
+                    "type": "categorical",
+                    "values": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "special_characters_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 22,
+            "description": "过滤器，以将具有特殊字符比率的样本保持在特定范围内。",
+            "params": [
+                {
+                    "name": "min_ratio",
+                    "type": "categorical",
+                    "values": [
+                        0.0,
+                        0.1
+                    ]
+                },
+                {
+                    "name": "max_ratio",
+                    "type": "categorical",
+                    "values": [
+                        0.2,
+                        0.25
+                    ]
+                },
+                {
+                    "name": "batch_size",
+                    "type": "categorical",
+                    "values": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "stopwords_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 23,
+            "description": "过滤器将停止词比率的样本保持在指定范围内。",
+            "params": [
+                {
+                    "name": "lang",
+                    "type": "categorical",
+                    "values": [
+                        "en"
+                    ]
+                },
+                {
+                    "name": "tokenization",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "name": "min_ratio",
+                    "type": "categorical",
+                    "values": [
+                        0.3,
+                        0.4
+                    ]
+                },
+                {
+                    "name": "use_words_aug",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "text_action_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 24,
+            "description": "过滤以保留包含最少数量操作的文本。",
+            "params": [
+                {
+                    "name": "lang",
+                    "type": "categorical",
+                    "values": [
+                        "en"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "text_entity_dependency_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 25,
+            "description": "根据实体依赖关系识别和过滤文本样本。",
+            "params": [
+                {
+                    "name": "lang",
+                    "type": "categorical",
+                    "values": [
+                        "en"
+                    ]
+                },
+                {
+                    "name": "any_or_all",
+                    "type": "categorical",
+                    "values": [
+                        "any",
+                        "all"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "text_length_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 26,
+            "description": "过滤以保持文本总长度在特定范围内的样本。",
+            "params": [
+                {
+                    "name": "min_len",
+                    "type": "continuous",
+                    "range": [
+                        200,
+                        1200
+                    ],
+                    "int": true
+                },
+                {
+                    "name": "max_len",
+                    "type": "continuous",
+                    "range": [
+                        1200,
+                        7500
+                    ],
+                    "int": true,
+                    "gt": "min_len"
+                }
+            ]
+        },
+        {
+            "name": "token_num_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 27,
+            "description": "筛选器将总令牌数的样本保留在指定范围内。",
+            "params": [
+                {
+                    "name": "hf_tokenizer",
+                    "type": "categorical",
+                    "values": [
+                        "EleutherAI/pythia-14m"
+                    ]
+                },
+                {
+                    "name": "min_num",
+                    "type": "continuous",
+                    "range": [
+                        50,
+                        300
+                    ],
+                    "int": true
+                },
+                {
+                    "name": "max_num",
+                    "type": "continuous",
+                    "range": [
+                        300,
+                        1800
+                    ],
+                    "int": true,
+                    "gt": "min_num"
+                }
+            ]
+        },
+        {
+            "name": "word_repetition_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 28,
+            "description": "过滤器将单词级n-gram重复比率的样本保持在特定范围内。",
+            "params": [
+                {
+                    "name": "lang",
+                    "type": "categorical",
+                    "values": [
+                        "en"
+                    ]
+                },
+                {
+                    "name": "tokenization",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "name": "rep_len",
+                    "type": "categorical",
+                    "values": [
+                        3,
+                        5,
+                        10,
+                        15,
+                        20
+                    ]
+                },
+                {
+                    "name": "min_ratio",
+                    "type": "categorical",
+                    "values": [
+                        0.0,
+                        0.1
+                    ]
+                },
+                {
+                    "name": "max_ratio",
+                    "type": "categorical",
+                    "values": [
+                        0.15,
+                        0.2,
+                        0.3,
+                        0.5
+                    ]
+                },
+                {
+                    "name": "batch_size",
+                    "type": "categorical",
+                    "values": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "words_num_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 29,
+            "description": "过滤器将样本的总字数保持在指定范围内。",
+            "params": [
+                {
+                    "name": "lang",
+                    "type": "categorical",
+                    "values": [
+                        "en"
+                    ]
+                },
+                {
+                    "name": "tokenization",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "name": "min_num",
+                    "type": "continuous",
+                    "range": [
+                        35,
+                        200
+                    ],
+                    "int": true
+                },
+                {
+                    "name": "max_num",
+                    "type": "continuous",
+                    "range": [
+                        200,
+                        1200
+                    ],
+                    "int": true,
+                    "gt": "min_num"
+                },
+                {
+                    "name": "batch_size",
+                    "type": "categorical",
+                    "values": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "document_deduplicator",
+            "type": "deduplicator",
+            "stage": 3,
+            "layer": 30,
+            "description": "使用完全匹配在文档级别删除重复的样本。",
+            "params": [
+                {
+                    "name": "lowercase",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "name": "ignore_non_character",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "document_minhash_deduplicator",
+            "type": "deduplicator",
+            "stage": 3,
+            "layer": 30,
+            "description": "使用MinHash LSH在文档级别删除重复样本。",
+            "params": [
+                {
+                    "name": "tokenization",
+                    "type": "categorical",
+                    "values": [
+                        "space",
+                        "character"
+                    ]
+                },
+                {
+                    "name": "lowercase",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "name": "ignore_pattern",
+                    "type": "categorical",
+                    "values": [
+                        "\\p{P}"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "document_simhash_deduplicator",
+            "type": "deduplicator",
+            "stage": 3,
+            "layer": 30,
+            "description": "使用SimHash在文档级别删除重复的样本。",
+            "params": [
+                {
+                    "name": "tokenization",
+                    "type": "categorical",
+                    "values": [
+                        "space",
+                        "character"
+                    ]
+                },
+                {
+                    "name": "lowercase",
+                    "type": "categorical",
+                    "values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "name": "ignore_pattern",
+                    "type": "categorical",
+                    "values": [
+                        "\\p{P}"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "text_chunk_mapper",
+            "type": "mapper",
+            "stage": 2,
+            "layer": 31,
+            "description": "根据指定的条件将输入文本拆分为块。",
+            "params": [
+                {
+                    "name": "max_len",
+                    "type": "continuous",
+                    "range": [
+                        256,
+                        2000
+                    ],
+                    "int": true
+                },
+                {
+                    "name": "split_pattern",
+                    "type": "categorical",
+                    "values": [
+                        "\\n",
+                        "\\n\\n",
+                        ". "
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "extract_entity_attribute_mapper",
+            "type": "mapper",
+            "stage": 4,
+            "layer": 32,
+            "description": "从文本中提取给定实体的属性，并将其存储在示例的元数据中。",
+            "params": [
+                {
+                    "name": "api_model",
+                    "type": "categorical",
+                    "values": [
+                        "qwen3.5:9b"
+                    ]
+                },
+                {
+                    "name": "api_endpoint",
+                    "type": "categorical",
+                    "values": [
+                        "https://open.h104.xclab.brisen.top/v1/chat/completions"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "extract_entity_relation_mapper",
+            "type": "mapper",
+            "stage": 4,
+            "layer": 33,
+            "description": "从文本中提取实体和关系以构建知识图谱。",
+            "params": [
+                {
+                    "name": "api_model",
+                    "type": "categorical",
+                    "values": [
+                        "qwen3.5:9b"
+                    ]
+                },
+                {
+                    "name": "api_endpoint",
+                    "type": "categorical",
+                    "values": [
+                        "https://open.h104.xclab.brisen.top/v1/chat/completions"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "extract_event_mapper",
+            "type": "mapper",
+            "stage": 4,
+            "layer": 34,
+            "description": "从文本中提取事件和相关字符。",
+            "params": [
+                {
+                    "name": "api_model",
+                    "type": "categorical",
+                    "values": [
+                        "qwen3.5:9b"
+                    ]
+                },
+                {
+                    "name": "api_endpoint",
+                    "type": "categorical",
+                    "values": [
+                        "https://open.h104.xclab.brisen.top/v1/chat/completions"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "extract_keyword_mapper",
+            "type": "mapper",
+            "stage": 4,
+            "layer": 35,
+            "description": "为文本生成关键字。",
+            "params": [
+                {
+                    "name": "api_model",
+                    "type": "categorical",
+                    "values": [
+                        "qwen3.5:9b"
+                    ]
+                },
+                {
+                    "name": "api_endpoint",
+                    "type": "categorical",
+                    "values": [
+                        "https://open.h104.xclab.brisen.top/v1/chat/completions"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "extract_nickname_mapper",
+            "type": "mapper",
+            "stage": 4,
+            "layer": 36,
+            "description": "使用语言模型提取文本中的昵称关系。",
+            "params": [
+                {
+                    "name": "api_model",
+                    "type": "categorical",
+                    "values": [
+                        "qwen3.5:9b"
+                    ]
+                },
+                {
+                    "name": "api_endpoint",
+                    "type": "categorical",
+                    "values": [
+                        "https://open.h104.xclab.brisen.top/v1/chat/completions"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "extract_support_text_mapper",
+            "type": "mapper",
+            "stage": 4,
+            "layer": 37,
+            "description": "根据给定的摘要从原始文本中提取支持子文本。",
+            "params": [
+                {
+                    "name": "api_model",
+                    "type": "categorical",
+                    "values": [
+                        "qwen3.5:9b"
+                    ]
+                },
+                {
+                    "name": "api_endpoint",
+                    "type": "categorical",
+                    "values": [
+                        "https://open.h104.xclab.brisen.top/v1/chat/completions"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "pair_preference_mapper",
+            "type": "mapper",
+            "stage": 4,
+            "layer": 38,
+            "description": "通过生成拒绝响应及其原因来构造成对的偏好样本。",
+            "params": [
+                {
+                    "name": "api_model",
+                    "type": "categorical",
+                    "values": [
+                        "qwen3.5:9b"
+                    ]
+                },
+                {
+                    "name": "api_endpoint",
+                    "type": "categorical",
+                    "values": [
+                        "https://open.h104.xclab.brisen.top/v1/chat/completions"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "relation_identity_mapper",
+            "type": "mapper",
+            "stage": 4,
+            "layer": 39,
+            "description": "确定给定文本中两个实体之间的关系。",
+            "params": [
+                {
+                    "name": "api_model",
+                    "type": "categorical",
+                    "values": [
+                        "qwen3.5:9b"
+                    ]
+                },
+                {
+                    "name": "api_endpoint",
+                    "type": "categorical",
+                    "values": [
+                        "https://open.h104.xclab.brisen.top/v1/chat/completions"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "nested_aggregator",
+            "type": "aggregator",
+            "stage": 4,
+            "layer": 40,
+            "description": "",
+            "params": [
+                {
+                    "name": "api_model",
+                    "type": "categorical",
+                    "values": [
+                        "qwen3.5:9b"
+                    ]
+                },
+                {
+                    "name": "api_endpoint",
+                    "type": "categorical",
+                    "values": [
+                        "https://open.h104.xclab.brisen.top/v1/chat/completions"
+                    ]
+                }
+            ]
+        }
+    ]
+}

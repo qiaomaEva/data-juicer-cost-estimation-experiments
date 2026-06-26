@@ -1,0 +1,86 @@
+project_name: text_pipeline_1781071569648_2000
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/c4_2000.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results/text/text_pipeline_1781071569648_2000.jsonl
+np: 40
+use_cache: false
+open_tracer: true
+process:
+- fix_unicode_mapper:
+    normalization: NFC
+- punctuation_normalization_mapper: null
+- whitespace_normalization_mapper: null
+- clean_ip_mapper: null
+- remove_specific_chars_mapper: null
+- sentence_split_mapper:
+    lang: en
+- remove_table_text_mapper: null
+- remove_repeat_sentences_mapper:
+    lowercase: false
+- remove_words_with_incorrect_substrings_mapper:
+    lang: en
+    tokenization: false
+    substrings:
+    - http
+    - www
+    - .com
+    - href
+    - //
+- clean_copyright_mapper: null
+- text_chunk_mapper:
+    max_len: 1427
+    split_pattern: \n\n
+- special_characters_filter:
+    min_ratio: 0.1
+    max_ratio: 0.25
+    batch_size: 3
+- text_action_filter:
+    lang: en
+- maximum_line_length_filter:
+    min_len: 399
+    max_len: 455
+    batch_size: 2
+- word_repetition_filter:
+    lang: en
+    tokenization: true
+    rep_len: 5
+    min_ratio: 0.1
+    max_ratio: 0.3
+    batch_size: 3
+- language_id_score_filter:
+    lang: en
+    min_score: 0.7
+- flagged_words_filter:
+    lang: en
+    tokenization: true
+    max_ratio: 0.045
+    use_words_aug: false
+- text_entity_dependency_filter:
+    lang: en
+    any_or_all: all
+- document_simhash_deduplicator:
+    tokenization: character
+    lowercase: true
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- fix_unicode_mapper
+- punctuation_normalization_mapper
+- whitespace_normalization_mapper
+- clean_ip_mapper
+- remove_specific_chars_mapper
+- sentence_split_mapper
+- remove_table_text_mapper
+- remove_repeat_sentences_mapper
+- remove_words_with_incorrect_substrings_mapper
+- clean_copyright_mapper
+- special_characters_filter
+- text_action_filter
+- maximum_line_length_filter
+- word_repetition_filter
+- language_id_score_filter
+- flagged_words_filter
+- text_entity_dependency_filter
+- document_simhash_deduplicator

@@ -1,0 +1,75 @@
+project_name: text_pipeline_1781071569377_8000
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/c4_8000.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results/text/text_pipeline_1781071569377_8000.jsonl
+np: 30
+use_cache: false
+open_tracer: true
+process:
+- fix_unicode_mapper:
+    normalization: NFC
+- whitespace_normalization_mapper: null
+- punctuation_normalization_mapper: null
+- remove_table_text_mapper: null
+- replace_content_mapper:
+    pattern: \d+(?:,\d+)*
+    repl: <hide>
+- clean_copyright_mapper: null
+- clean_links_mapper: null
+- clean_email_mapper: null
+- sentence_split_mapper:
+    lang: en
+- clean_ip_mapper: null
+- text_length_filter:
+    min_len: 798
+    max_len: 1250
+- maximum_line_length_filter:
+    min_len: 260
+    max_len: 599
+    batch_size: 2
+- flagged_words_filter:
+    lang: en
+    tokenization: true
+    max_ratio: 0.045
+    use_words_aug: true
+- word_repetition_filter:
+    lang: en
+    tokenization: true
+    rep_len: 10
+    min_ratio: 0.1
+    max_ratio: 0.5
+    batch_size: 3
+- character_repetition_filter:
+    rep_len: 3
+    min_ratio: 0.0
+    max_ratio: 0.5
+    batch_size: 3
+- token_num_filter:
+    hf_tokenizer: EleutherAI/pythia-14m
+    min_num: 158
+    max_num: 1581
+- document_simhash_deduplicator:
+    tokenization: character
+    lowercase: true
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- fix_unicode_mapper
+- whitespace_normalization_mapper
+- punctuation_normalization_mapper
+- remove_table_text_mapper
+- replace_content_mapper
+- clean_copyright_mapper
+- clean_links_mapper
+- clean_email_mapper
+- sentence_split_mapper
+- clean_ip_mapper
+- text_length_filter
+- maximum_line_length_filter
+- flagged_words_filter
+- word_repetition_filter
+- character_repetition_filter
+- token_num_filter
+- document_simhash_deduplicator

@@ -1,0 +1,45 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Internal working README (the GitHub-facing one is readme.md)
+EXPERIMENT_README.md
+
+# Internal working materials (周报、分析报告、PDF/docx/xlsx 等)
+report/
+
+# Generated experiment outputs — keep current output/, drop historical snapshots
+output_20*/
+
+# AutoGluon trained models: too large for GitHub (single .pkl often >100MB).
+# Models can be retrained from output/data/*.csv via prediction_cost.py / prediction_cardinality.py.
+output/AutogluonModels/
+
+# Large collected run results
+collect_data/runs_chunks/
+collect_data/result_20*/
+collect_data/result_image_cpu_only/
+collect_data/pipeline_yaml_20*/
+collect_data/*.tar
+collect_data/*.tar.gz
+collect_data/*.tar.zst
+
+# Keep the latest reproducibility artifacts in GitHub for review.
+!collect_data/result_20260611/
+!collect_data/result_20260611/**
+!collect_data/runs_chunks/
+!collect_data/runs_chunks/**
+
+# Logs
+*.log

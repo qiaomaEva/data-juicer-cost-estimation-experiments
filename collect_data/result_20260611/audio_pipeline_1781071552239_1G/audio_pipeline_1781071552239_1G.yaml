@@ -1,0 +1,29 @@
+project_name: audio_pipeline_1781071552239_1G
+dataset_path: /data/data-juicer_dataset/audio/indices/test-by-size-1024MiB.jsonl
+export_path: /home/yyw/pipeline_full/results/audio/audio_pipeline_1781071552239_1G.jsonl
+np: 12
+use_cache: false
+open_tracer: true
+process:
+- audio_duration_filter:
+    min_duration: 9.429398730665799
+    max_duration: 10.050743629517806
+    any_or_all: any
+- audio_size_filter:
+    min_size: 302kb
+    max_size: 572kb
+    any_or_all: all
+- audio_nmf_snr_filter:
+    min_snr: 0
+    snr_max: 14
+    any_or_all: any
+- audio_ffmpeg_wrapped_mapper:
+    filter_name: aresample
+    filter_kwargs:
+      sample_rate: 16000
+    save_dir: /tmp/data-juicer/output/audio/ffmpeg_wrapped/audio_pipeline_1781071552239_1G
+op_list_to_trace:
+- audio_duration_filter
+- audio_size_filter
+- audio_nmf_snr_filter
+- audio_ffmpeg_wrapped_mapper

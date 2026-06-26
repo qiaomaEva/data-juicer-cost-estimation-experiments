@@ -1,0 +1,19 @@
+project_name: image_pipeline_1781071560429_512MB
+dataset_path: /data/coco2017/indices/coco_physical_512M.jsonl
+export_path: /data-juicer/pipeline_full/results/image/image_pipeline_1781071560429_512MB.jsonl
+np: 12
+use_cache: false
+open_tracer: true
+process:
+- image_size_filter:
+    min_size: 79kb
+    max_size: 172kb
+- image_shape_filter:
+    min_width: 503
+    max_width: 639
+    min_height: 367
+    max_height: 587
+- image_aspect_ratio_filter:
+    min_ratio: 0.7541099278423311
+    max_ratio: 1.4083708274243487
+- image_detection_yolo_mapper: null

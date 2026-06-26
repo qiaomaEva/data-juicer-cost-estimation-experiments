@@ -1,0 +1,321 @@
+{
+    "stages": [
+        {
+            "id": 0,
+            "description": "预处理（去重与基础大小过滤）",
+            "min_operator_count": 1,
+            "max_operator_count": 2,
+            "operator_total": 2
+        },
+        {
+            "id": 1,
+            "description": "基础过滤（形状、长宽比等）",
+            "min_operator_count": 1,
+            "max_operator_count": 2,
+            "operator_total": 2
+        },
+        {
+            "id": 2,
+            "description": "高级过滤（美学、NSFW、人脸、水印等）",
+            "min_operator_count": 0,
+            "max_operator_count": 3,
+            "operator_total": 5
+        },
+        {
+            "id": 3,
+            "description": "图像转换与增强（模糊、背景移除、检测等）",
+            "min_operator_count": 0,
+            "max_operator_count": 3,
+            "operator_total": 5
+        },
+        {
+            "id": 4,
+            "description": "元数据生成（打标签等）",
+            "min_operator_count": 0,
+            "max_operator_count": 1,
+            "operator_total": 1
+        }
+    ],
+    "operators": [
+        {
+            "name": "image_deduplicator",
+            "type": "filter",
+            "stage": 0,
+            "layer": 0,
+            "description": "通过图像的精确匹配在文档级别删除重复的样本。",
+            "params": []
+        },
+        {
+            "name": "image_size_filter",
+            "type": "filter",
+            "stage": 0,
+            "layer": 1,
+            "description": "保留图像大小在特定范围内的数据样本。",
+            "params": [
+                {
+                    "name": "min_size",
+                    "type": "continuous",
+                    "range": [
+                        50,
+                        150
+                    ],
+                    "int": true,
+                    "unit": "kb"
+                },
+                {
+                    "name": "max_size",
+                    "type": "continuous",
+                    "range": [
+                        150,
+                        300
+                    ],
+                    "int": true,
+                    "unit": "kb",
+                    "gt": "min_size"
+                }
+            ]
+        },
+        {
+            "name": "image_aspect_ratio_filter",
+            "type": "filter",
+            "stage": 1,
+            "layer": 2,
+            "description": "保持样本的图像纵横比在特定范围内。",
+            "params": [
+                {
+                    "name": "min_ratio",
+                    "type": "continuous",
+                    "range": [
+                        0.65,
+                        1.05
+                    ]
+                },
+                {
+                    "name": "max_ratio",
+                    "type": "continuous",
+                    "range": [
+                        1.35,
+                        1.65
+                    ],
+                    "gt": "min_ratio"
+                }
+            ]
+        },
+        {
+            "name": "image_shape_filter",
+            "type": "filter",
+            "stage": 1,
+            "layer": 3,
+            "description": "保持样本的图像形状（宽度，高度）在特定的范围内。",
+            "params": [
+                {
+                    "name": "min_width",
+                    "type": "continuous",
+                    "range": [
+                        400,
+                        550
+                    ],
+                    "int": true
+                },
+                {
+                    "name": "max_width",
+                    "type": "continuous",
+                    "range": [
+                        550,
+                        640
+                    ],
+                    "int": true,
+                    "gt": "min_width"
+                },
+                {
+                    "name": "min_height",
+                    "type": "continuous",
+                    "range": [
+                        320,
+                        480
+                    ],
+                    "int": true
+                },
+                {
+                    "name": "max_height",
+                    "type": "continuous",
+                    "range": [
+                        480,
+                        640
+                    ],
+                    "int": true,
+                    "gt": "min_height"
+                }
+            ]
+        },
+        {
+            "name": "image_aesthetics_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 4,
+            "description": "过滤以保持美学分数在特定范围内的样品。",
+            "params": [
+                {
+                    "name": "hf_scorer_model",
+                    "type": "categorical",
+                    "values": [
+                        "shunk031/aesthetics-predictor-v2-sac-logos-ava1-l14-linearMSE"
+                    ]
+                },
+                {
+                    "name": "min_score",
+                    "type": "continuous",
+                    "range": [
+                        0.3,
+                        0.6
+                    ]
+                },
+                {
+                    "name": "max_score",
+                    "type": "categorical",
+                    "values": [
+                        1.0
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "image_nsfw_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 5,
+            "description": "过滤器保留其图像的nsfw分数在指定范围内的样本。",
+            "params": [
+                {
+                    "name": "hf_nsfw_model",
+                    "type": "categorical",
+                    "values": [
+                        "/data/coco2017/weights/nsfw_model"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "image_face_count_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 6,
+            "description": "过滤以保持样本的面数在特定范围内。",
+            "params": []
+        },
+        {
+            "name": "image_face_ratio_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 7,
+            "description": "过滤以保持面面积比在特定范围内的样本。",
+            "params": [
+                {
+                    "name": "min_ratio",
+                    "type": "continuous",
+                    "range": [
+                        0.0,
+                        0.4
+                    ]
+                },
+                {
+                    "name": "max_ratio",
+                    "type": "continuous",
+                    "range": [
+                        0.5,
+                        1.0
+                    ],
+                    "gt": "min_ratio"
+                }
+            ]
+        },
+        {
+            "name": "image_watermark_filter",
+            "type": "filter",
+            "stage": 2,
+            "layer": 8,
+            "description": "过滤器以保持其图像没有水印的样本具有高概率。",
+            "params": [
+                {
+                    "name": "hf_watermark_model",
+                    "type": "categorical",
+                    "values": [
+                        "/data/coco2017/weights/watermark_model"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "image_blur_mapper",
+            "type": "mapper",
+            "stage": 3,
+            "layer": 9,
+            "description": "使用指定的概率和模糊类型对数据集中的图像进行模糊处理。",
+            "params": [
+                {
+                    "name": "save_dir",
+                    "type": "categorical",
+                    "values": [
+                        "/tmp/data-juicer/output/image/blur"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "image_detection_yolo_mapper",
+            "type": "mapper",
+            "stage": 3,
+            "layer": 10,
+            "description": "使用YOLO对图像执行对象检测，并返回边界框和类标签。",
+            "params": []
+        },
+        {
+            "name": "image_face_blur_mapper",
+            "type": "mapper",
+            "stage": 3,
+            "layer": 11,
+            "description": "映射器模糊图像中检测到的人脸。",
+            "params": [
+                {
+                    "name": "save_dir",
+                    "type": "categorical",
+                    "values": [
+                        "/tmp/data-juicer/output/image/face_blur"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "image_remove_background_mapper",
+            "type": "mapper",
+            "stage": 3,
+            "layer": 12,
+            "description": "映射器删除图像的背景。",
+            "params": [
+                {
+                    "name": "save_dir",
+                    "type": "categorical",
+                    "values": [
+                        "/tmp/data-juicer/output/image/remove_background"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "image_segment_mapper",
+            "type": "mapper",
+            "stage": 3,
+            "layer": 13,
+            "description": "图像执行segment-任何操作并返回边界框。",
+            "params": []
+        },
+        {
+            "name": "image_tagging_mapper",
+            "type": "mapper",
+            "stage": 4,
+            "layer": 14,
+            "description": "为样本中的每个图像生成图像标记。",
+            "params": []
+        }
+    ]
+}

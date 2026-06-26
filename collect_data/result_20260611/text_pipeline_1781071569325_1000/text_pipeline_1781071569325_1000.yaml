@@ -1,0 +1,59 @@
+project_name: text_pipeline_1781071569325_1000
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/c4_1000.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results/text/text_pipeline_1781071569325_1000.jsonl
+np: 40
+use_cache: false
+open_tracer: true
+process:
+- fix_unicode_mapper:
+    normalization: NFC
+- whitespace_normalization_mapper: null
+- punctuation_normalization_mapper: null
+- clean_copyright_mapper: null
+- remove_words_with_incorrect_substrings_mapper:
+    lang: en
+    tokenization: true
+    substrings:
+    - <
+    - '>'
+    - '='
+    - '&'
+    - '?'
+- remove_specific_chars_mapper: null
+- remove_repeat_sentences_mapper:
+    lowercase: false
+- token_num_filter:
+    hf_tokenizer: EleutherAI/pythia-14m
+    min_num: 255
+    max_num: 605
+- text_action_filter:
+    lang: en
+- language_id_score_filter:
+    lang: en
+    min_score: 0.7
+- character_repetition_filter:
+    rep_len: 3
+    min_ratio: 0.0
+    max_ratio: 0.6
+    batch_size: 2
+- document_simhash_deduplicator:
+    tokenization: space
+    lowercase: false
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- fix_unicode_mapper
+- whitespace_normalization_mapper
+- punctuation_normalization_mapper
+- clean_copyright_mapper
+- remove_words_with_incorrect_substrings_mapper
+- remove_specific_chars_mapper
+- remove_repeat_sentences_mapper
+- token_num_filter
+- text_action_filter
+- language_id_score_filter
+- character_repetition_filter
+- document_simhash_deduplicator

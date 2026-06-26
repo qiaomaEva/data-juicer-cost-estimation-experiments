@@ -1,0 +1,20 @@
+project_name: image_pipeline_1781071560565_6G
+dataset_path: /data/coco2017/indices/coco_physical_6G.jsonl
+export_path: /data-juicer/pipeline_full/results/image/image_pipeline_1781071560565_6G.jsonl
+np: 16
+use_cache: false
+open_tracer: true
+process:
+- image_deduplicator: null
+- image_shape_filter:
+    min_width: 536
+    max_width: 567
+    min_height: 476
+    max_height: 507
+- image_aspect_ratio_filter:
+    min_ratio: 0.8698160773326267
+    max_ratio: 1.4284503121847265
+- image_aesthetics_filter:
+    hf_scorer_model: shunk031/aesthetics-predictor-v2-sac-logos-ava1-l14-linearMSE
+    min_score: 0.37540002002956807
+    max_score: 1.0

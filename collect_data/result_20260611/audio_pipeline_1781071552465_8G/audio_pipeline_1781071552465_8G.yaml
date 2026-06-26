@@ -1,0 +1,21 @@
+project_name: audio_pipeline_1781071552465_8G
+dataset_path: /data/data-juicer_dataset/audio/indices/test-by-size-8192MiB.jsonl
+export_path: /home/yyw/pipeline_full/results/audio/audio_pipeline_1781071552465_8G.jsonl
+np: 4
+use_cache: false
+open_tracer: true
+process:
+- audio_size_filter:
+    min_size: 205kb
+    max_size: 607kb
+    any_or_all: any
+- audio_nmf_snr_filter:
+    min_snr: 0
+    snr_max: 12
+    any_or_all: all
+- audio_add_gaussian_noise_mapper:
+    save_dir: /tmp/data-juicer/output/audio/gaussian_noise/audio_pipeline_1781071552465_8G
+op_list_to_trace:
+- audio_size_filter
+- audio_nmf_snr_filter
+- audio_add_gaussian_noise_mapper

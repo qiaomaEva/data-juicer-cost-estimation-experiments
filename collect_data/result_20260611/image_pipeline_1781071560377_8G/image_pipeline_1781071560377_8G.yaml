@@ -1,0 +1,25 @@
+project_name: image_pipeline_1781071560377_8G
+dataset_path: /data/coco2017/indices/coco_physical_8G.jsonl
+export_path: /data-juicer/pipeline_full/results/image/image_pipeline_1781071560377_8G.jsonl
+np: 16
+use_cache: false
+open_tracer: true
+process:
+- image_deduplicator: null
+- image_size_filter:
+    min_size: 114kb
+    max_size: 163kb
+- image_aspect_ratio_filter:
+    min_ratio: 0.7457739561497768
+    max_ratio: 1.5076148323787293
+- image_shape_filter:
+    min_width: 508
+    max_width: 571
+    min_height: 448
+    max_height: 584
+- image_face_ratio_filter:
+    min_ratio: 0.10104374729589854
+    max_ratio: 0.5271699046155276
+- image_segment_mapper: null
+- image_remove_background_mapper:
+    save_dir: "/tmp/data-juicer/output/image/remove_background/image_pipeline_1781071560377_8G"

@@ -1,0 +1,45 @@
+project_name: text_pipeline_1781071569251_5000
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/c4_5000.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results/text/text_pipeline_1781071569251_5000.jsonl
+np: 40
+use_cache: false
+open_tracer: true
+process:
+- whitespace_normalization_mapper: null
+- fix_unicode_mapper:
+    normalization: NFKC
+- remove_specific_chars_mapper: null
+- remove_repeat_sentences_mapper:
+    lowercase: false
+- clean_links_mapper: null
+- perplexity_filter:
+    lang: en
+    max_ppl: 657
+    batch_size: 3
+- token_num_filter:
+    hf_tokenizer: EleutherAI/pythia-14m
+    min_num: 299
+    max_num: 1501
+- flagged_words_filter:
+    lang: en
+    tokenization: false
+    max_ratio: 0.05
+    use_words_aug: false
+- document_simhash_deduplicator:
+    tokenization: character
+    lowercase: true
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- whitespace_normalization_mapper
+- fix_unicode_mapper
+- remove_specific_chars_mapper
+- remove_repeat_sentences_mapper
+- clean_links_mapper
+- perplexity_filter
+- token_num_filter
+- flagged_words_filter
+- document_simhash_deduplicator

@@ -1,0 +1,88 @@
+project_name: text_pipeline_1781071569346_10000
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/c4_10000.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results/text/text_pipeline_1781071569346_10000.jsonl
+np: 40
+use_cache: false
+open_tracer: true
+process:
+- punctuation_normalization_mapper: null
+- fix_unicode_mapper:
+    normalization: NFKD
+- remove_long_words_mapper:
+    min_len: 3
+    max_len: 15
+- clean_email_mapper: null
+- clean_copyright_mapper: null
+- remove_repeat_sentences_mapper:
+    lowercase: false
+- clean_ip_mapper: null
+- remove_words_with_incorrect_substrings_mapper:
+    lang: en
+    tokenization: true
+    substrings:
+    - <
+    - '>'
+    - '='
+    - '&'
+    - '?'
+- maximum_line_length_filter:
+    min_len: 223
+    max_len: 520
+    batch_size: 3
+- stopwords_filter:
+    lang: en
+    tokenization: false
+    min_ratio: 0.4
+    use_words_aug: false
+- average_line_length_filter:
+    min_len: 42
+    max_len: 4905
+    batch_size: 3
+- token_num_filter:
+    hf_tokenizer: EleutherAI/pythia-14m
+    min_num: 260
+    max_num: 898
+- perplexity_filter:
+    lang: en
+    max_ppl: 2963
+    batch_size: 3
+- language_id_score_filter:
+    lang:
+    - en
+    - zh
+    min_score: 0.8
+- flagged_words_filter:
+    lang: en
+    tokenization: true
+    max_ratio: 0.05
+    use_words_aug: true
+- special_characters_filter:
+    min_ratio: 0.1
+    max_ratio: 0.25
+    batch_size: 3
+- document_simhash_deduplicator:
+    tokenization: character
+    lowercase: false
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- punctuation_normalization_mapper
+- fix_unicode_mapper
+- remove_long_words_mapper
+- clean_email_mapper
+- clean_copyright_mapper
+- remove_repeat_sentences_mapper
+- clean_ip_mapper
+- remove_words_with_incorrect_substrings_mapper
+- maximum_line_length_filter
+- stopwords_filter
+- average_line_length_filter
+- token_num_filter
+- perplexity_filter
+- language_id_score_filter
+- flagged_words_filter
+- special_characters_filter
+- document_simhash_deduplicator

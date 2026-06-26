@@ -1,0 +1,185 @@
+{
+    "stages": [
+        {
+            "id": 0,
+            "description": "数据清洗",
+            "min_operator_count": 2,
+            "max_operator_count": 3,
+            "operator_total": 3
+        },
+        {
+            "id": 1,
+            "description": "数据增强",
+            "min_operator_count": 1,
+            "max_operator_count": 1,
+            "operator_total": 2
+        }
+    ],
+    "operators": [
+        {
+            "name": "audio_nmf_snr_filter",
+            "type": "filter",
+            "stage": 0,
+            "layer": 0,
+            "description": "保持音频信噪比（SNR）在指定范围内的数据样本。",
+            "params": [
+                {
+                    "name": "min_snr",
+                    "type": "continuous",
+                    "range": [
+                        -2,
+                        2
+                    ],
+                    "int": true
+                },
+                {
+                    "name": "snr_max",
+                    "type": "continuous",
+                    "range": [
+                        8,
+                        18
+                    ],
+                    "int": true,
+                    "gt": "min_snr"
+                },
+                {
+                    "name": "any_or_all",
+                    "type": "categorical",
+                    "values": [
+                        "any",
+                        "all"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "audio_size_filter",
+            "type": "filter",
+            "stage": 0,
+            "layer": 1,
+            "description": "根据音频文件的大小保留数据样本。",
+            "params": [
+                {
+                    "name": "min_size",
+                    "type": "continuous",
+                    "range": [
+                        180,
+                        320
+                    ],
+                    "int": true,
+                    "unit": "kb"
+                },
+                {
+                    "name": "max_size",
+                    "type": "continuous",
+                    "range": [
+                        430,
+                        620
+                    ],
+                    "int": true,
+                    "unit": "kb",
+                    "gt": "min_size"
+                },
+                {
+                    "name": "any_or_all",
+                    "type": "categorical",
+                    "values": [
+                        "any",
+                        "all"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "audio_duration_filter",
+            "type": "filter",
+            "stage": 0,
+            "layer": 2,
+            "description": "保留音频持续时间在指定范围内的数据样本。",
+            "params": [
+                {
+                    "name": "min_duration",
+                    "type": "continuous",
+                    "range": [
+                        9.4,
+                        9.95
+                    ]
+                },
+                {
+                    "name": "max_duration",
+                    "type": "continuous",
+                    "range": [
+                        10.0,
+                        10.2
+                    ],
+                    "gt": "min_duration"
+                },
+                {
+                    "name": "any_or_all",
+                    "type": "categorical",
+                    "values": [
+                        "any",
+                        "all"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "audio_ffmpeg_wrapped_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 3,
+            "description": "包装FFmpeg音频过滤器，用于处理数据集中的音频文件。",
+            "params": [
+                {
+                    "name": "filter_name",
+                    "type": "categorical",
+                    "values": [
+                        "aresample"
+                    ]
+                },
+                {
+                    "name": "filter_kwargs",
+                    "type": "categorical",
+                    "values": [
+                        {
+                            "sample_rate": 16000
+                        },
+                        {
+                            "sample_rate": 22050
+                        },
+                        {
+                            "sample_rate": 44100
+                        },
+                        {
+                            "sample_rate": 48000
+                        }
+                    ]
+                },
+                {
+                    "name": "save_dir",
+                    "type": "categorical",
+                    "values": [
+                        "/tmp/data-juicer/output/audio/ffmpeg_wrapped"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "audio_add_gaussian_noise_mapper",
+            "type": "mapper",
+            "stage": 1,
+            "layer": 4,
+            "description": "映射器将高斯噪声添加到音频样本。",
+            "params": [
+                {
+                    "name": "save_dir",
+                    "type": "categorical",
+                    "values": [
+                        "/tmp/data-juicer/output/audio/gaussian_noise"
+                    ]
+                }
+            ]
+        }
+    ]
+}

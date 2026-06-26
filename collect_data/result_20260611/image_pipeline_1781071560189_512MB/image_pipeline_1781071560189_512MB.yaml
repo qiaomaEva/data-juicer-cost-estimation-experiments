@@ -1,0 +1,25 @@
+project_name: image_pipeline_1781071560189_512MB
+dataset_path: /data/coco2017/indices/coco_physical_512M.jsonl
+export_path: /data-juicer/pipeline_full/results/image/image_pipeline_1781071560189_512MB.jsonl
+np: 12
+use_cache: false
+open_tracer: true
+process:
+- image_deduplicator: null
+- image_size_filter:
+    min_size: 70kb
+    max_size: 229kb
+- image_shape_filter:
+    min_width: 442
+    max_width: 561
+    min_height: 401
+    max_height: 504
+- image_face_count_filter: null
+- image_nsfw_filter:
+    hf_nsfw_model: /data/coco2017/weights/nsfw_model
+- image_remove_background_mapper:
+    save_dir: "/tmp/data-juicer/output/image/remove_background/image_pipeline_1781071560189_512MB"
+- image_blur_mapper:
+    save_dir: "/tmp/data-juicer/output/image/blur/image_pipeline_1781071560189_512MB"
+- image_face_blur_mapper:
+    save_dir: "/tmp/data-juicer/output/image/face_blur/image_pipeline_1781071560189_512MB"

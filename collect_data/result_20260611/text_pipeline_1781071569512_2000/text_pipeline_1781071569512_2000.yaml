@@ -1,0 +1,96 @@
+project_name: text_pipeline_1781071569512_2000
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/c4_2000.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results/text/text_pipeline_1781071569512_2000.jsonl
+np: 30
+use_cache: false
+open_tracer: true
+process:
+- punctuation_normalization_mapper: null
+- whitespace_normalization_mapper: null
+- remove_words_with_incorrect_substrings_mapper:
+    lang: en
+    tokenization: true
+    substrings:
+    - http
+    - www
+    - .com
+    - href
+    - //
+- remove_specific_chars_mapper: null
+- clean_email_mapper: null
+- clean_links_mapper: null
+- remove_repeat_sentences_mapper:
+    lowercase: false
+- clean_copyright_mapper: null
+- clean_ip_mapper: null
+- remove_table_text_mapper: null
+- alphanumeric_filter:
+    tokenization: true
+    min_ratio: 0.3
+    max_ratio: 0.8
+    batch_size: 2
+    num_proc: 1
+- maximum_line_length_filter:
+    min_len: 312
+    max_len: 857
+    batch_size: 3
+- token_num_filter:
+    hf_tokenizer: EleutherAI/pythia-14m
+    min_num: 213
+    max_num: 461
+- text_entity_dependency_filter:
+    lang: en
+    any_or_all: any
+- text_action_filter:
+    lang: en
+- perplexity_filter:
+    lang: en
+    max_ppl: 941
+    batch_size: 2
+- language_id_score_filter:
+    lang:
+    - en
+    - zh
+    min_score: 0.7
+- words_num_filter:
+    lang: en
+    tokenization: false
+    min_num: 130
+    max_num: 377
+    batch_size: 3
+- word_repetition_filter:
+    lang: en
+    tokenization: true
+    rep_len: 15
+    min_ratio: 0.1
+    max_ratio: 0.2
+    batch_size: 3
+- document_simhash_deduplicator:
+    tokenization: character
+    lowercase: false
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- punctuation_normalization_mapper
+- whitespace_normalization_mapper
+- remove_words_with_incorrect_substrings_mapper
+- remove_specific_chars_mapper
+- clean_email_mapper
+- clean_links_mapper
+- remove_repeat_sentences_mapper
+- clean_copyright_mapper
+- clean_ip_mapper
+- remove_table_text_mapper
+- alphanumeric_filter
+- maximum_line_length_filter
+- token_num_filter
+- text_entity_dependency_filter
+- text_action_filter
+- perplexity_filter
+- language_id_score_filter
+- words_num_filter
+- word_repetition_filter
+- document_simhash_deduplicator

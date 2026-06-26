@@ -1,0 +1,57 @@
+project_name: text_pipeline_1781071569304_10000
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/c4_10000.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results/text/text_pipeline_1781071569304_10000.jsonl
+np: 30
+use_cache: false
+open_tracer: true
+process:
+- fix_unicode_mapper:
+    normalization: NFKD
+- whitespace_normalization_mapper: null
+- clean_copyright_mapper: null
+- clean_links_mapper: null
+- clean_email_mapper: null
+- clean_ip_mapper: null
+- text_entity_dependency_filter:
+    lang: en
+    any_or_all: all
+- character_repetition_filter:
+    rep_len: 15
+    min_ratio: 0.0
+    max_ratio: 0.5
+    batch_size: 2
+- text_length_filter:
+    min_len: 343
+    max_len: 2003
+- average_line_length_filter:
+    min_len: 38
+    max_len: 4137
+    batch_size: 2
+- word_repetition_filter:
+    lang: en
+    tokenization: false
+    rep_len: 15
+    min_ratio: 0.1
+    max_ratio: 0.5
+    batch_size: 2
+- document_simhash_deduplicator:
+    tokenization: space
+    lowercase: true
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- fix_unicode_mapper
+- whitespace_normalization_mapper
+- clean_copyright_mapper
+- clean_links_mapper
+- clean_email_mapper
+- clean_ip_mapper
+- text_entity_dependency_filter
+- character_repetition_filter
+- text_length_filter
+- average_line_length_filter
+- word_repetition_filter
+- document_simhash_deduplicator

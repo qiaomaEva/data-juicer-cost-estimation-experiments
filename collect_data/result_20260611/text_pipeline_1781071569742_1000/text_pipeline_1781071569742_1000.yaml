@@ -1,0 +1,87 @@
+project_name: text_pipeline_1781071569742_1000
+dataset:
+  configs:
+  - type: local
+    path: /data/data-juicer_dataset/RedPajama/indices/c4_1000.jsonl
+    format: jsonl
+export_path: /home/yyw/pipeline_full/results/text/text_pipeline_1781071569742_1000.jsonl
+np: 50
+use_cache: false
+open_tracer: true
+process:
+- whitespace_normalization_mapper: null
+- remove_words_with_incorrect_substrings_mapper:
+    lang: en
+    tokenization: true
+    substrings:
+    - <
+    - '>'
+    - '='
+    - '&'
+    - '?'
+- remove_repeat_sentences_mapper:
+    lowercase: true
+- remove_long_words_mapper:
+    min_len: 3
+    max_len: 13
+- clean_email_mapper: null
+- remove_table_text_mapper: null
+- flagged_words_filter:
+    lang: en
+    tokenization: false
+    max_ratio: 0.05
+    use_words_aug: false
+- average_line_length_filter:
+    min_len: 57
+    max_len: 6956
+    batch_size: 3
+- token_num_filter:
+    hf_tokenizer: EleutherAI/pythia-14m
+    min_num: 197
+    max_num: 1358
+- text_entity_dependency_filter:
+    lang: en
+    any_or_all: any
+- text_chunk_mapper:
+    max_len: 1462
+    split_pattern: \n
+- text_length_filter:
+    min_len: 360
+    max_len: 5420
+- text_action_filter:
+    lang: en
+- perplexity_filter:
+    lang: en
+    max_ppl: 589
+    batch_size: 3
+- language_id_score_filter:
+    lang: en
+    min_score: 0.7
+- word_repetition_filter:
+    lang: en
+    tokenization: false
+    rep_len: 10
+    min_ratio: 0.0
+    max_ratio: 0.15
+    batch_size: 3
+- document_simhash_deduplicator:
+    tokenization: character
+    lowercase: true
+    ignore_pattern: \p{P}
+op_list_to_trace:
+- whitespace_normalization_mapper
+- remove_words_with_incorrect_substrings_mapper
+- remove_repeat_sentences_mapper
+- remove_long_words_mapper
+- clean_email_mapper
+- remove_table_text_mapper
+- flagged_words_filter
+- average_line_length_filter
+- token_num_filter
+- text_entity_dependency_filter
+- text_length_filter
+- text_action_filter
+- perplexity_filter
+- language_id_score_filter
+- word_repetition_filter
+- document_simhash_deduplicator

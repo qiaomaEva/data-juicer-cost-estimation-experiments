@@ -1,0 +1,16 @@
+project_name: image_pipeline_1781071560398_1G
+dataset_path: /data/coco2017/indices/coco_physical_1G.jsonl
+export_path: /data-juicer/pipeline_full/results/image/image_pipeline_1781071560398_1G.jsonl
+np: 8
+use_cache: false
+open_tracer: true
+process:
+- image_size_filter:
+    min_size: 137kb
+    max_size: 243kb
+- image_deduplicator: null
+- image_shape_filter:
+    min_width: 425
+    max_width: 622
+    min_height: 405
+    max_height: 511
