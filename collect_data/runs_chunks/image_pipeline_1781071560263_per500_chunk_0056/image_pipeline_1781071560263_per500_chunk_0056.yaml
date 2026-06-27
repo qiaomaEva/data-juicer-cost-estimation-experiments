@@ -1,0 +1,26 @@
+project_name: image_pipeline_1781071560263_per500_chunk_0056
+dataset_path: /data/coco2017/indices/chunks_by_count/coco_physical_8G_per_500/chunk_0056.jsonl
+export_path: /data-juicer/pipeline_full/results_chunks/image/image_pipeline_1781071560263_per500_chunk_0056.jsonl
+np: 16
+use_cache: false
+open_tracer: true
+process:
+- image_size_filter:
+    min_size: 97kb
+    max_size: 155kb
+- image_deduplicator: null
+- image_shape_filter:
+    min_width: 404
+    max_width: 611
+    min_height: 470
+    max_height: 596
+- image_aspect_ratio_filter:
+    min_ratio: 1.0324097900128417
+    max_ratio: 1.3931094966849764
+- image_nsfw_filter:
+    hf_nsfw_model: /data/coco2017/weights/nsfw_model
+- image_face_ratio_filter:
+    min_ratio: 0.2862860314805391
+    max_ratio: 0.6292324097079971
+- image_face_count_filter: null
+- image_segment_mapper: null
